@@ -1,6 +1,6 @@
 import type { Config } from "tailwindcss";
 
-export default {
+module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -9,13 +9,9 @@ export default {
 
   theme: {
     extend: {
-      fontFamily: {
-        sans: ["Inter", "ui-sans-serif", "system-ui"],
-        serif: ["Lexend", "ui-serif", "Georgia"],
-        mono: ["DM Sans", "ui-monospace", "SFMono-Regular"],
-      },
+    
     },
-    color: {
+    colors: {
       "primary-indigo": "rgba(77, 0, 133, 1)",
       "secondary-purple-heart": "rgba(140, 82, 255, 1)",
       "secondary-spring-green": "rgba(193, 255, 114, 1)",
@@ -59,4 +55,5 @@ export default {
       "indigo-900": "rgba(28, 0, 48, 1)",
     },
   },
+  plugins: [],
 } satisfies Config;
