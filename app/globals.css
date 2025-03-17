@@ -1,0 +1,57 @@
+@import "tailwindcss";
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  outline: none;
+  scroll-behavior: smooth;
+  font-family: var(--DMSans), sans-serif
+}
+img {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+}
+@theme{
+      --color-primary-indigo: oklch(0.33 0.19 293);
+      --color-secondary-purple-heart: oklch(0.62 0.23 292);
+      --color-secondary-spring-green: oklch(0.89 0.18 137);
+      --color-grey-scale-off-white: oklch(0.98 0.01 250);
+      --color-grey-scale-french-gray: oklch(0.81 0.01 250);
+      --color-grey-scale-dim-gray: oklch(0.53 0.01 250);
+      --color-grey-scale-onyx: oklch(0.27 0.01 250);
+      --color-grey-scale-eerie-black: oklch(0.12 0.01 250);
+      --color-grey-scale-stroke-for-white: oklch(0.8 0.01 250);
+      --color-ui-colors-background: oklch(0.09 0.02 270);
+      --color-ui-colors-footer-background: oklch(0.12 0.02 270);
+      --color-spring-green-50: oklch(0.96 0.12 137);
+      --color-spring-green-100: oklch(0.94 0.13 137);
+      --color-spring-green-200: oklch(0.92 0.14 137);
+      --color-spring-green-300: oklch(0.91 0.15 137);
+      --color-spring-green-400: oklch(0.89 0.16 137);
+      --color-spring-green-500: oklch(0.89 0.18 137);
+      --color-spring-green-600: oklch(0.75 0.17 137);
+      --color-spring-green-700: oklch(0.62 0.16 137);
+      --color-spring-green-800: oklch(0.49 0.14 137);
+      --color-spring-green-900: oklch(0.37 0.12 137);
+      --color-purple-heart-50: oklch(0.87 0.15 292);
+      --color-purple-heart-100: oklch(0.84 0.16 292);
+      --color-purple-heart-200: oklch(0.79 0.18 292);
+      --color-purple-heart-300: oklch(0.74 0.2 292);
+      --color-purple-heart-400: oklch(0.69 0.22 292);
+      --color-purple-heart-500: oklch(0.62 0.23 292);
+      --color-purple-heart-600: oklch(0.53 0.21 292);
+      --color-purple-heart-700: oklch(0.43 0.18 292);
+      --color-purple-heart-800: oklch(0.35 0.15 292);
+      --color-purple-heart-900: oklch(0.26 0.12 292);
+      --color-indigo-50: oklch(0.78 0.11 293);
+      --color-indigo-100: oklch(0.72 0.12 293);
+      --color-indigo-200: oklch(0.62 0.14 293);
+      --color-indigo-300: oklch(0.52 0.16 293);
+      --color-indigo-400: oklch(0.42 0.18 293);
+      --color-indigo-500: oklch(0.33 0.19 293);
+      --color-indigo-600: oklch(0.28 0.17 293);
+      --color-indigo-700: oklch(0.23 0.15 293);
+      --color-indigo-800: oklch(0.18 0.12 293);
+      --color-indigo-900: oklch(0.13 0.1 293);
+}
