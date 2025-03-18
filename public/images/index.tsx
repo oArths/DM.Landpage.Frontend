@@ -1,0 +1,1 @@
+export {default as LogoPurple} from "./LogoPurple.svg";
