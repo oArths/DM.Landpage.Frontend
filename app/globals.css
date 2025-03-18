@@ -1,7 +1,5 @@
 @import "tailwindcss";
 * {
-  margin: 0px;
-  padding: 0px;
   box-sizing: border-box;
   outline: none;
   scroll-behavior: smooth;
@@ -22,7 +20,7 @@ img {
       --color-grey-scale-onyx: oklch(0.27 0.01 250);
       --color-grey-scale-eerie-black: oklch(0.12 0.01 250);
       --color-grey-scale-stroke-for-white: oklch(0.8 0.01 250);
-      --color-ui-colors-background: oklch(0.09 0.02 270);
+      --color-ui-colors-background: oklch(11.425008124046347% 0.055 262.5291924287245);
       --color-ui-colors-footer-background: oklch(0.12 0.02 270);
       --color-spring-green-50: oklch(0.96 0.12 137);
       --color-spring-green-100: oklch(0.94 0.13 137);
@@ -51,7 +49,7 @@ img {
       --color-indigo-400: oklch(0.42 0.18 293);
       --color-indigo-500: oklch(0.33 0.19 293);
       --color-indigo-600: oklch(0.28 0.17 293);
-      --color-indigo-700: oklch(0.23 0.15 293);
+      --color-indigo-700: oklch(26.38791377442416% 0.139 303.05703219253513);
       --color-indigo-800: oklch(0.18 0.12 293);
       --color-indigo-900: oklch(0.13 0.1 293);
 }
