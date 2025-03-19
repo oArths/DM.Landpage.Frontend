@@ -1,0 +1,84 @@
+.styles {
+  --primary-indigo: #4D0085;
+  --secondary-purple-heart: #8C52FF;
+  --secondary-spring-green: #C1FF72;
+  --grey-scale-off-white: #FAFCFE;
+  --grey-scale-french-gray: #C9C9C9;
+  --grey-scale-dim-gray: #808080;
+  --grey-scale-onyx: #323538;
+  --grey-scale-eerie-black: #15181B;
+  --grey-scale-stroke-for-white: #C7C7C7;
+  --ui-colors-background: #000319;
+  --ui-colors-footer-background: #080B0E;
+  --spring-green-styles-50: #EEFFD8;
+  --spring-green-styles-100: #E9FFCC;
+  --spring-green-styles-200: #DFFFB6;
+  --spring-green-styles-300: #D5FF9F;
+  --spring-green-styles-400: #CBFF89;
+  --spring-green-styles-500: #C1FF72;
+  --spring-green-styles-600: #A2D660;
+  --spring-green-styles-700: #83AD4E;
+  --spring-green-styles-800: #64853B;
+  --spring-green-styles-900: #455C29;
+  --purple-heart-styles-50: #DFCFFF;
+  --purple-heart-styles-100: #D6C1FF;
+  --purple-heart-styles-200: #C3A5FF;
+  --purple-heart-styles-300: #B189FF;
+  --purple-heart-styles-400: #9E6EFF;
+  --purple-heart-styles-500: #8C52FF;
+  --purple-heart-styles-600: #7645D6;
+  --purple-heart-styles-700: #5F38AD;
+  --purple-heart-styles-800: #492B85;
+  --purple-heart-styles-900: #321E5C;
+  --indigo-styles-50: #CDB8DD;
+  --indigo-styles-100: #BFA3D3;
+  --indigo-styles-200: #A27AC0;
+  --indigo-styles-300: #8652AC;
+  --indigo-styles-400: #692999;
+  --indigo-styles-500: #4D0085;
+  --indigo-styles-600: #410070;
+  --indigo-styles-700: #34005A;
+  --indigo-styles-800: #280045;
+  --indigo-styles-900: #1C0030;
+}
+.primary-indigo { color: var(--primary-indigo); }
+.secondary-purple-heart { color: var(--secondary-purple-heart); }
+.secondary-spring-green { color: var(--secondary-spring-green); }
+.grey-scale-off-white { color: var(--grey-scale-off-white); }
+.grey-scale-french-gray { color: var(--grey-scale-french-gray); }
+.grey-scale-dim-gray { color: var(--grey-scale-dim-gray); }
+.grey-scale-onyx { color: var(--grey-scale-onyx); }
+.grey-scale-eerie-black { color: var(--grey-scale-eerie-black); }
+.grey-scale-stroke-for-white { color: var(--grey-scale-stroke-for-white); }
+.ui-colors-background { color: var(--ui-colors-background); }
+.ui-colors-footer-background { color: var(--ui-colors-footer-background); }
+.spring-green-styles-50 { color: var(--spring-green-styles-50); }
+.spring-green-styles-100 { color: var(--spring-green-styles-100); }
+.spring-green-styles-200 { color: var(--spring-green-styles-200); }
+.spring-green-styles-300 { color: var(--spring-green-styles-300); }
+.spring-green-styles-400 { color: var(--spring-green-styles-400); }
+.spring-green-styles-500 { color: var(--spring-green-styles-500); }
+.spring-green-styles-600 { color: var(--spring-green-styles-600); }
+.spring-green-styles-700 { color: var(--spring-green-styles-700); }
+.spring-green-styles-800 { color: var(--spring-green-styles-800); }
+.spring-green-styles-900 { color: var(--spring-green-styles-900); }
+.purple-heart-styles-50 { color: var(--purple-heart-styles-50); }
+.purple-heart-styles-100 { color: var(--purple-heart-styles-100); }
+.purple-heart-styles-200 { color: var(--purple-heart-styles-200); }
+.purple-heart-styles-300 { color: var(--purple-heart-styles-300); }
+.purple-heart-styles-400 { color: var(--purple-heart-styles-400); }
+.purple-heart-styles-500 { color: var(--purple-heart-styles-500); }
+.purple-heart-styles-600 { color: var(--purple-heart-styles-600); }
+.purple-heart-styles-700 { color: var(--purple-heart-styles-700); }
+.purple-heart-styles-800 { color: var(--purple-heart-styles-800); }
+.purple-heart-styles-900 { color: var(--purple-heart-styles-900); }
+.indigo-styles-50 { color: var(--indigo-styles-50); }
+.indigo-styles-100 { color: var(--indigo-styles-100); }
+.indigo-styles-200 { color: var(--indigo-styles-200); }
+.indigo-styles-300 { color: var(--indigo-styles-300); }
+.indigo-styles-400 { color: var(--indigo-styles-400); }
+.indigo-styles-500 { color: var(--indigo-styles-500); }
+.indigo-styles-600 { color: var(--indigo-styles-600); }
+.indigo-styles-700 { color: var(--indigo-styles-700); }
+.indigo-styles-800 { color: var(--indigo-styles-800); }
+.indigo-styles-900 { color: var(--indigo-styles-900); }
