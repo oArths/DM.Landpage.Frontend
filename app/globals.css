@@ -1,9 +1,7 @@
 @import "tailwindcss";
 * {
   box-sizing: border-box;
-  outline: none;
   scroll-behavior: smooth;
-  font-family: var(--DMSans), sans-serif
 }
 img {
   user-select: none;
@@ -11,6 +9,9 @@ img {
   -webkit-user-drag: none;
 }
 @theme { 
+      --font-DMSans: 'DM Sans', sans-serif;
+      --font-Inter: 'Inter', sans-serif;
+      --font-Lexend: 'Lexend', sans-serif;
       --radius-full: 100%;
       --color-primary-indigo:oklch(34.48% 0.182277 301.7673);
       --color-secondary-purple-heart:oklch(59.99% 0.2412 293.08);
@@ -19,6 +20,7 @@ img {
       --color-grey-scale-french-gray: oklch(83.59% 0 0);
       --color-grey-scale-dim-gray:oklch(59.99% 0 0);
       --color-grey-scale-onyx:oklch(32.72% 0.0067 248.03);
+      --color-gray-scale-text: oklch(94.27% 0.0271 267.53);
       --color-grey-scale-eerie-black: oklch(20.71% 0.0076 248.19);
       --color-grey-scale-stroke-for-white: oklch(82.97% 0 0);
       --color-ui-colors-background:oklch(11.43% 0.0551 262.53);
