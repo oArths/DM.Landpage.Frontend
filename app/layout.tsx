@@ -8,7 +8,7 @@ const lexend = Lexend({
   display: "swap",
 });
 const inter = Inter({
-  weight: ["400", "500"],
+  weight: ["200","300","400", "500"],
   variable: "--Inter",
   display: "swap",
 });

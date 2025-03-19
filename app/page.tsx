@@ -4,28 +4,41 @@ export default function Home() {
   return (
     <section className="bg-ui-colors-background min-h-screen  text-white w-full h-full">
       <header className="h-[90px] w-full bg-transparent flex items-center justify-between py-5 px-[60px]">
-        <Image
-          src={LogoPurple}
-          width={51}
-          height={51}
-          alt="Logo da Empresa Data Mastery"
-        />
-        <div>
+        <div className="relative w-[51px] h-[51px]">
+          <Image
+            src={LogoPurple}
+            fill
+            sizes="(max-width: 51px) 5vw"
+            alt="Logo da Empresa Data Mastery"
+          />
+        </div>
+        <div className="relative w-[30px] h-[24px]">
           <Image
             src={MenuIcon}
-            width={30}
-            height={24}
+            fill
+            sizes="(max-width: 30px) 5vw"
             alt="Icone do menu lateral"
           />
         </div>
       </header>
-      <span>
-        <p>Ciência de dados, treinamentos e automação com i.a.</p>
-        <h1>Learning Your Way</h1>
-        <h2>Capacitando a sua Transformação Digital</h2>
-        <button>Agende uma reunião</button>
-      </span>
-      <div className=" relative bg-transparent h-[90dvh] ">
+      <div className=" relative bg-transparent flex items-center h-[90dvh] ">
+        <span className="flex flex-col items-center justify-center w-full gap-10 absolute top-[20%] z-20">
+          <p className="font-Inter font-extralight text-base text-gray-scale-text tracking-widest">
+            CIÊNCIA DE DADOS, TREINAMENTOS E AUTOMAÇÃO COM I.A.
+          </p>
+          <span className="flex flex-col items-center justify-center gap-[15px]">
+            <h1 className="font-lexend  text-grey-scale-off-white font-bold text-7xl ">
+              Learning Your Way
+            </h1>
+            <h2 className="font-Inter  text-grey-scale-off-white font-light text-2xl ">
+              Capacitando a sua Transformação Digital
+            </h2>
+          </span>
+          <button className="font-DMSans font-medium text-base h-10 cursor-pointer px-11 py-1.5 bg-secondary-purple-heart rounded-sm ">
+            
+            Agende uma reunião
+          </button>
+        </span>
         <div className="bg-primary-indigo z-[15]  blur-2xl absolute opacity-20 -top-20 left-[50%] p-0  w-[15vw] h-[15vw]  aspect-square rounded-full" />
         <div className="bg-primary-indigo z-[15]  blur-2xl absolute opacity-20 top-48 right-[80%] p-0  w-[25vw] h-[25vw]  aspect-square rounded-full" />
         <div className="bg-primary-indigo z-[15]  blur-2xl absolute opacity-20 -bottom-20 left-[70%] p-0  w-[25vw] h-[25vw]  aspect-square rounded-full" />
