@@ -23,6 +23,7 @@ img {
       --color-gray-scale-text: oklch(94.27% 0.0271 267.53);
       --color-grey-scale-eerie-black: oklch(20.71% 0.0076 248.19);
       --color-grey-scale-stroke-for-white: oklch(82.97% 0 0);
+      --color-purple-scale-stroke: oklch(38.32% 0.0654 274.94);
       --color-ui-colors-background:oklch(11.43% 0.0551 262.53);
       --color-ui-colors-footer-background: oklch(14.75% 0.0083 247.26);
       --color-spring-green-50: oklch(97.74% 0.054 126.59);
