@@ -10,7 +10,8 @@ img {
   -webkit-user-select: none;
   -webkit-user-drag: none;
 }
-@theme{
+@theme { 
+      --radius-full: 100%;
       --color-primary-indigo:oklch(34.48% 0.182277 301.7673);
       --color-secondary-purple-heart:oklch(59.99% 0.2412 293.08);
       --color-secondary-spring-green:oklch(92.97% 0.1823 129.21);

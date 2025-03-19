@@ -19,7 +19,13 @@ export default function Home() {
           />
         </div>
       </header>
-      <div className=" relative bg-transparent h-[90dvh]">
+      <span>
+        <p>Ciência de dados, treinamentos e automação com i.a.</p>
+        <h1>Learning Your Way</h1>
+        <h2>Capacitando a sua Transformação Digital</h2>
+        <button>Agende uma reunião</button>
+      </span>
+      <div className=" relative bg-transparent h-[90dvh] ">
         <div className="bg-primary-indigo z-[15]  blur-2xl absolute opacity-20 -top-20 left-[50%] p-0  w-[15vw] h-[15vw]  aspect-square rounded-full" />
         <div className="bg-primary-indigo z-[15]  blur-2xl absolute opacity-20 top-48 right-[80%] p-0  w-[25vw] h-[25vw]  aspect-square rounded-full" />
         <div className="bg-primary-indigo z-[15]  blur-2xl absolute opacity-20 -bottom-20 left-[70%] p-0  w-[25vw] h-[25vw]  aspect-square rounded-full" />
@@ -30,7 +36,7 @@ export default function Home() {
               " radial-gradient(circle, rgba(0,3,25,0) 20%, rgb(0,3,25) 100%)",
           }}
         />
-        <div className="w-full h-full relative overflow-hidden rounded-[100%] ">
+        <div className="w-full h-full relative overflow-hidden rounded-full ">
           <div className="grid place-items-start grid-cols-4 sm:grid-cols-6 lg:grid-cols-[repeat(13,minmax(0,1fr))] lg:grid-rows-9 bg-transparent">
             {Array.from({ length: 117 }).map((_, i) => (
               <div
