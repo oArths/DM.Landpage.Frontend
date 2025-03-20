@@ -8,6 +8,24 @@ img {
   -webkit-user-select: none;
   -webkit-user-drag: none;
 }
+    @keyframes rotate-90 {
+      0% {
+        transform: rotate(0deg);
+      }
+  
+      100% {
+        transform: rotate(90deg);
+      }
+    }
+    @keyframes -rotate-90 {
+      0% {
+        transform: rotate(90deg);
+      }
+  
+      100% {
+        transform: rotate(0deg);
+      }
+    }
 @layer utilities {
   .vertical {
     writing-mode: sideways-lr;
@@ -18,7 +36,15 @@ img {
     writing-mode: horizontal-tb;
     text-orientation: mixed;
   }
+    .animation-rotate-90 {
+      animation: rotate-90 0.4s ease forwards;
+    }
+    .animation-reverse-rotate-90{
+      animation: -rotate-90 0.4s ease forwards;
+    }
 }
+  
+  
 @theme { 
       --font-DMSans: 'DM Sans', sans-serif;
       --font-Inter: 'Inter', sans-serif;
