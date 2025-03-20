@@ -8,6 +8,17 @@ img {
   -webkit-user-select: none;
   -webkit-user-drag: none;
 }
+@layer utilities {
+  .vertical {
+    writing-mode: sideways-lr;
+    text-orientation: mixed;
+  }
+
+  .horizontal {
+    writing-mode: horizontal-tb;
+    text-orientation: mixed;
+  }
+}
 @theme { 
       --font-DMSans: 'DM Sans', sans-serif;
       --font-Inter: 'Inter', sans-serif;
