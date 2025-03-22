@@ -33,64 +33,58 @@ img {
 
 @keyframes hiddenMenu {
   0% {
-    width: 0px;
+    max-width: 0;
     padding-left: 0;
     padding-right: 0;
     opacity: 0;
+    margin-right: auto;
   }
   100% {
-    width: auto;
+    max-width: 700px;
     padding-left: 80px;
     padding-right: 120px;
+    opacity: 1;
+    margin-right: auto;
   }
 }
 
 @keyframes -hiddenMenu {
   0% {
-      width: 100%;
-      padding-left: 80px;
-      padding-right: 120px;
-      opacity: 1;
-      visibility: visible;
-    }
-  
-    100% {
-      position: relative;
-      z-index: -1;
-      width: 0;
-      padding-left: 0;
-      padding-right: 0;
-      opacity: 0;
-      visibility: hidden;
-    }
-    
-}
-
-
-
-@keyframes hiddenText {
-  0% {
-    opacity: 0;
-    position: absolute;
-    z-index: 1;
-  }
-
-  50% {
-    opacity: 0;
-    position: relative;
-    z-index: 1;
-  }
-
-  75% {
-    opacity: 0.5;
-    position: relative;
-    z-index: 1;
+    max-width: 700px;
+    padding-left: 80px;
+    padding-right: 120px;
+    opacity: 1;
   }
 
   100% {
-    opacity: 1;
-    position: relative;
+    max-width: 0;
+    padding-left: 0;
+    padding-right: 0;
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes hiddenText {
+  0% {
+    visibility: hidden;
     z-index: 1;
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+
+  75% {
+    
+    z-index: 1;
+    opacity: 0.5;
+    transform: translateX(-5px);
+  }
+
+  100% {
+    width: 300px;
+    z-index: 1;
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
@@ -112,6 +106,7 @@ img {
   .animation-reverse-rotate-90 {
     animation: -rotate-90 0.4s ease forwards;
   }
+
   .animation-menu {
     animation: hiddenMenu 2s ease forwards;
   }

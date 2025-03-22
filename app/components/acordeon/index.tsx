@@ -54,6 +54,17 @@ const Data = [
 
 export default function Acordeon() {
   const [openMenu, setOpenMenu] = useState<number | null>(null);
+  const [previousOpenMenu, setPreviousOpenMenu] = useState<number | null>(null);
+
+  const selectMenu = (index: number) => {
+    if (openMenu === index) {
+      setPreviousOpenMenu(index);
+      setOpenMenu(null);
+    } else {
+      setPreviousOpenMenu(openMenu);
+      setOpenMenu(index);
+    }
+  };
   return (
     <section className="relative w-full h-[100%] flex items-center ">
       <div className="bg-transparent flex flex-row  border-purple-scale-stroke border text-white w-full h-[512px]  ">
@@ -64,7 +75,7 @@ export default function Acordeon() {
           <p className="bg-secondary-purple-heart h-2.5 w-10" />
         </div>
         <div
-          className={` flex-col  justify-center gap-10   items-center  ${
+          className={` flex-col  justify-center gap-10  relative z-[1]  items-center  ${
             openMenu === null
               ? "flex animation-menu"
               : "animation-reverse-menu  "
@@ -87,15 +98,13 @@ export default function Acordeon() {
           Data.map((item, index) => (
             <div
               key={index}
-              className={`flex flex-row items-center border-purple-scale-stroke border border-t-0 border-r-0 border-b-0 ${
+              className={`flex flex-row items-center bg-ui-colors-background border-purple-scale-stroke border border-t-0 border-r-0 border-b-0  relative z-[2]${
                 openMenu === index && ""
               }`}
             >
               <label
-                className="flex flex-row justify-between items-start h-full  px-5 pr-2.5 pl-8 font-Inter font-semibold  text-white/70 text-2xl vertical border-purple-scale-stroke border border-t-0 border-l-0 "
-                onClick={() =>
-                  openMenu === index ? setOpenMenu(null) : setOpenMenu(index)
-                }
+                className="flex flex-row justify-between items-start h-full  relative z-[2] bg-ui-colors-background  px-5 pr-2.5 pl-8 font-Inter font-semibold  text-white/70 text-2xl vertical border-purple-scale-stroke border border-t-0 border-l-0 "
+                onClick={() => selectMenu(index)}
               >
                 {item.titulo}
                 <I.ChevronDown
@@ -109,18 +118,22 @@ export default function Acordeon() {
                 />
               </label>
               <div
-                className={`flex-col  justify-center gap-10  items-start overflow-hidden ${
+                className={`flex-col justify-center gap-10 items-start overflow-hidden   ${
                   openMenu === index
-                    ? "flex animation-menu"
+                    ? "flex animation-menu "
+                    : previousOpenMenu === index
+                    ? "animation-reverse-menu "
                     : "hidden"
                 }`}
               >
-                <h2 className="font-Inter font-bold text-2xl animation-text  ">
-                  {item.titulo}
-                </h2>
-                <span className="font-DMSans font-normal text-base text-left animation-text">
-                  {item.texto}
-                </span>
+                <div className="flex flex-col items-start gap-10  absolute z-[1]">
+                  <h2 className="font-Inter font-bold text-2xl flex-none  shrink-[0] min-w-fit  animation-text    ">
+                    {item.titulo}
+                  </h2>
+                  <span className="font-DMSans font-normal text-base flex-none   shrink-[0] min-w-fit text-left animation-text ">
+                    {item.texto}
+                  </span>
+                </div>
               </div>
             </div>
           ))}
