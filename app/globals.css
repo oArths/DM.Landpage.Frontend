@@ -31,60 +31,66 @@ img {
   }
 }
 
-@keyframes hiddenMenu {
+@keyframes slideMenu {
   0% {
     max-width: 0;
     padding-left: 0;
-    padding-right: 0;
-    opacity: 0;
-    margin-right: auto;
-  }
-  100% {
-    max-width: 700px;
-    padding-left: 80px;
-    padding-right: 120px;
-    opacity: 1;
-    margin-right: auto;
-  }
-}
-
-@keyframes -hiddenMenu {
-  0% {
-    max-width: 700px;
-    padding-left: 80px;
-    padding-right: 120px;
-    opacity: 1;
-  }
-
-  100% {
-    max-width: 0;
-    padding-left: 0;
-    padding-right: 0;
     opacity: 0;
     visibility: hidden;
+    transform: translateX(100%);
   }
+
+  100% {
+    transform: translateX(0);
+    max-width: 700px;
+    padding-left: 80px;
+    padding-right: 120px;
+  }
+
 }
+
+@keyframes -slideMenu {
+  0% {
+    max-width: 700px;
+    padding-left: 80px;
+    padding-right: 120px;
+    opacity: 1;
+  }
+
+  100% {
+    visibility: hidden;
+    max-width: 0;
+    padding-left: 0;
+    padding-right: 0;
+    margin-right: 0;
+    opacity: 0;
+  }
+
+}
+
+
 
 @keyframes hiddenText {
   0% {
     visibility: hidden;
-    z-index: 1;
     opacity: 0;
-    transform: translateX(-10px);
-  }
-
-  75% {
-    
-    z-index: 1;
-    opacity: 0.5;
-    transform: translateX(-5px);
   }
 
   100% {
     width: 300px;
-    z-index: 1;
     opacity: 1;
-    transform: translateX(0);
+  }
+}
+
+@keyframes -hiddenText {
+  0% {
+    width: 300px;
+    opacity: 1;
+  }
+
+  100% {
+    visibility: hidden;
+    opacity: 0;
   }
 }
 
@@ -107,16 +113,20 @@ img {
     animation: -rotate-90 0.4s ease forwards;
   }
 
-  .animation-menu {
-    animation: hiddenMenu 2s ease forwards;
-  }
-
-  .animation-reverse-menu {
-    animation: -hiddenMenu 2s ease forwards;
-  }
-
   .animation-text {
     animation: hiddenText 1s ease forwards;
+  }
+
+  .animation-reverse-text {
+    animation: -hiddenText 0.5s ease forwards;
+  }
+
+  .animation-slide-menu {
+    animation: slideMenu 2s ease forwards;
+  }
+
+  .animation-reverse-slide-menu {
+    animation: -slideMenu 1.5s ease forwards;
   }
 
 }
