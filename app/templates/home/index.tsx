@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <section className=" relative bg-transparent flex items-center h-[90dvh] w-full ">
+    <section className=" relative bg-transparent flex items-center h-[90dvh] w-full  ">
       <span className="flex flex-col items-center justify-center w-full gap-10 absolute top-[20%] z-20">
         <p className="font-Inter font-extralight text-base text-gray-scale-text tracking-widest">
           CIÊNCIA DE DADOS, TREINAMENTOS E AUTOMAÇÃO COM I.A.
@@ -17,9 +17,9 @@ export default function Home() {
           Agende uma reunião
         </button>
       </span>
-      <div className="bg-primary-indigo z-[15]  blur-2xl absolute opacity-20 -top-20 left-[50%] p-0  w-[15vw] h-[15vw]  aspect-square rounded-full" />
-      <div className="bg-primary-indigo z-[15]  blur-2xl absolute opacity-20 top-48 right-[80%] p-0  w-[25vw] h-[25vw]  aspect-square rounded-full" />
-      <div className="bg-primary-indigo z-[15]  blur-2xl absolute opacity-20 -bottom-20 left-[70%] p-0  w-[25vw] h-[25vw]  aspect-square rounded-full" />
+      <div className="bg-primary-indigo z-[15]  blur-3xl absolute opacity-20 -top-20 left-[50%] p-0  w-[15vw] h-[15vw]  aspect-square rounded-full" />
+      <div className="bg-primary-indigo z-[15]  blur-3xl absolute opacity-20 top-48 right-[80%] p-0  w-[25vw] h-[25vw]  aspect-square rounded-full" />
+      <div className="bg-primary-indigo z-[15]  blur-3xl absolute opacity-20 -bottom-60 left-[80%] p-0  w-[25vw] h-[25vw]  aspect-square rounded-full" />
       <div
         className="w-full h-full absolute z-10 "
         style={{
