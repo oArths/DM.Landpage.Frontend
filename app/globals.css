@@ -36,13 +36,12 @@ img {
     max-width: 0;
     padding-left: 0;
     opacity: 0;
-    visibility: hidden;
     transform: translateX(100%);
   }
 
   100% {
     transform: translateX(0);
-    max-width: 700px;
+    max-width: 2000px;
     padding-left: 80px;
     padding-right: 120px;
   }
@@ -51,46 +50,42 @@ img {
 
 @keyframes -slideMenu {
   0% {
-    max-width: 700px;
+    max-width: 2000px;
     padding-left: 80px;
     padding-right: 120px;
     opacity: 1;
   }
 
   100% {
-    visibility: hidden;
     max-width: 0;
     padding-left: 0;
     padding-right: 0;
-    margin-right: 0;
     opacity: 0;
   }
 
 }
 
-
-
 @keyframes hiddenText {
   0% {
-    visibility: hidden;
     opacity: 0;
+    transform: translateY(8px);
   }
 
   100% {
-    width: 300px;
     opacity: 1;
+    transform: translateY(0);
   }
 }
 
 @keyframes -hiddenText {
   0% {
-    width: 300px;
     opacity: 1;
+    transform: translateY(0);
   }
 
   100% {
-    visibility: hidden;
     opacity: 0;
+    transform: translateY(8px);
   }
 }
 
