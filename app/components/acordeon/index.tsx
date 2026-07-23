@@ -66,61 +66,65 @@ export default function Acordeon() {
     }
   };
   return (
-    <section className="relative w-full h-screen flex  flex-col justify-between items-center ">
-      <div className=" flex flex-row  border-purple-scale-stroke border bg-ui-colors-background  z-[20]  text-white w-full h-[512px]  ">
-        <div className="flex flex-col items-center relative z-[2] justify-items-start gap-2.5 px-5 py-3.5 border-purple-scale-stroke border border-l-0 border-b-0 border-t-0">
+    <section className="acordeon-section relative w-full max-w-dvw overflow-x-hidden flex flex-col justify-between items-center">
+      <div className="acordeon-layout flex w-full max-w-dvw overflow-hidden border border-purple-scale-stroke bg-ui-colors-background text-white z-[20] h-[512px]">
+        <div className="acordeon-sidebar flex flex-col items-center relative z-[2] justify-items-start gap-2.5 px-5 py-3.5 border-purple-scale-stroke border border-l-0 border-b-0 border-t-0">
           <h2 className="font-Inter font-bold text-3xl  h-auto vertical mt-auto">
             Clientes & Parceiros
           </h2>
-          <p className="bg-secondary-purple-heart h-2.5 w-10" />
+          <p className="bg-secondary-purple-heart h-2.5 w-10 trace" />
         </div>
         <div
-          className={` flex-col  justify-center gap-10  relative z-[1]  overflow-hidden items-center  ${
+          className={`acordeon-panel flex-col justify-center gap-10 relative z-[1] overflow-hidden items-center ${
             openMenu === null
-              ? "flex animation-slide-menu mr-auto"
+              ? "flex shrink-0 animation-slide-menu mr-auto"
               : " flex animation-reverse-slide-menu   "
           }`}
         >
-          <h2
-            className={`font-Inter font-bold text-2xl  flex-none shrink-[0] min-w-fit ${
-              openMenu === null
-                ? "flex animation-text "
-                : "flex animation-reverse-text duration-75"
-            } `}
-          >
+
+          <div className="acordeon-content w-[min(420px,calc(100dvw-15rem))] shrink-0">
+            <h2
+              className={`font-Inter font-bold text-2xl flex-none shrink-[0] w-max whitespace-nowrap ${
+                openMenu === null
+                  ? "flex animation-text "
+                  : "flex animation-reverse-text duration-150"
+              } `}
+            >
             Nossos clientes & Parceiros
-          </h2>
-          <span
-            className={`font-DMSans font-normal text-base text-left flex-none shrink-[0] min-w-fit ${
+            </h2>
+            <span
+              className={`font-DMSans font-normal text-base text-left block w-full whitespace-normal break-words ${
               openMenu === null
-                ? "flex animation-text "
-                : "flex animation-reverse-text duration-75"
+                ? "animation-text "
+                : "animation-reverse-text duration-150"
             }`}
-          >
+            >
             A Data Mastery Tech é uma empresa de serviços educacionais e
             consultorias especializada em Business Intelligence, Data
             Engineering, Data Science e Automação Robótica. Nosso propósito é
             ajudar empresas e profissionais a se desenvolverem na área de dados
             e gerar transformação digital.
-          </span>
+            </span>
+          </div>
         </div>
         {Data &&
           Data.map((item, index) => (
             <div
               key={index}
-              className={`flex flex-row items-center bg-ui-colors-background  border-purple-scale-stroke border border-t-0 border-r-0 border-b-0  relative z-[2] ${
+              className={`acordeon-item flex flex-row items-center bg-ui-colors-background border-purple-scale-stroke border border-t-0 border-r-0 border-b-0 relative z-[2] ${
                 openMenu === index && " mr-auto"
               }`}
             >
               <label
-                className="flex flex-row justify-between items-start h-full  relative z-[2] bg-ui-colors-background  px-5 pr-2.5 pl-8 font-Inter font-semibold  text-white/70 text-2xl vertical border-purple-scale-stroke border border-t-0 border-l-0 "
+                className={` ${ index === openMenu ?  "text-gray-scale-text" :"text-white/70"} acordeon-trigger flex flex-row justify-between items-start h-full relative z-[3] bg-ui-colors-background px-5 pr-2.5 pl-8 font-Inter font-semibold  text-2xl vertical border-purple-scale-stroke border border-t-0 border-l-0`}
                 onClick={() => selectMenu(index)}
               >
                 {item.titulo}
                 <I.ChevronDown
                   color="oklch(76.81% 0.0099 279.64)"
                   size={24}
-                  className={`${
+                  className={`trigger ${
+                    
                     openMenu === index
                       ? "animation-rotate-90"
                       : " animation-reverse-rotate-90"
@@ -128,42 +132,44 @@ export default function Acordeon() {
                 />
               </label>
               <div
-                className={`flex-col justify-center gap-10 items-start w-auto relative z-[1] overflow-hidden ${
+                className={`acordeon-panel flex-col justify-center gap-10 items-start w-auto relative z-[1] overflow-hidden ${
                   openMenu === index
                     ? "flex animation-slide-menu "
                     : previousOpenMenu === index
-                    ? "flex animation-reverse-slide-menu "
-                    : "hidden"
+                      ? "flex animation-reverse-slide-menu "
+                      : "hidden"
                 }`}
               >
-                <h2
-                  className={`font-Inter font-bold text-2xl flex-none  shrink-[0] min-w-fit ${
-                    openMenu === index
-                      ? "flex animation-text "
-                      : previousOpenMenu === index
-                      ? " flex animation-reverse-text "
-                      : "hidden"
-                  }`}
-                >
+                <div className="acordeon-content w-[min(420px,calc(100dvw-15rem))] shrink-0">
+                  <h2
+                    className={`font-Inter font-bold text-2xl flex-none shrink-[0] w-max whitespace-nowrap ${
+                      openMenu === index
+                        ? "flex animation-text "
+                        : previousOpenMenu === index
+                          ? " flex animation-reverse-text "
+                          : "hidden"
+                    }`}
+                  >
                   {item.titulo}
-                </h2>
-                <span
-                  className={`font-DMSans font-normal text-base flex-none shrink-[0] min-w-fit text-left ${
+                  </h2>
+                  <span
+                    className={`font-DMSans font-normal text-base block w-full whitespace-normal break-words text-left ${
                     openMenu === index
-                      ? "flex animation-text "
+                      ? "animation-text "
                       : previousOpenMenu === index
-                      ? "animation-reverse-text "
-                      : "hidden"
-                  }   `}
-                >
+                        ? "animation-reverse-text "
+                        : "hidden"
+                  }`}
+                  >
                   {item.texto}
-                </span>
+                  </span>
+                </div>
               </div>
             </div>
           ))}
       </div>
 
-      <div className="bg-grey-scale-onyx w-[80dvw] h-[1px]"/>
+   
     </section>
   );
 }
