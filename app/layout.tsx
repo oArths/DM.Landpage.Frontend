@@ -1,6 +1,8 @@
-import type { Metadata } from "next";
-import { DM_Sans, Inter, Lexend } from "next/font/google";
 import "./globals.css";
+import type { Metadata } from "next";
+import Header from "./templates/header";
+import Footer from "./templates/footer";
+import { DM_Sans, Inter, Lexend } from "next/font/google";
 
 const lexend = Lexend({
   weight: ["600", "700", "800"],
@@ -8,7 +10,7 @@ const lexend = Lexend({
   display: "swap",
 });
 const inter = Inter({
-  weight: ["200","300","400", "500"],
+  weight: ["200", "300", "400", "500"],
   variable: "--Inter",
   display: "swap",
 });
@@ -31,9 +33,11 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body
-        className={`${lexend.variable} ${inter.variable}  ${dmsans.variable}  antialiased`}
+        className={`${lexend.variable} ${inter.variable}  ${dmsans.variable}  antialiased bg-ui-colors-background `}
       >
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
