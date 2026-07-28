@@ -1,7 +1,7 @@
 "use client";
 import { useRef, useEffect, useState } from "react";
 
-export default function Service() {
+export default function Service({ id }: { id: string }) {
   const consultoriaRef = useRef<HTMLDivElement>(null);
   const educacionalRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -30,7 +30,7 @@ export default function Service() {
   }, []);
 
   return (
-    <div className=" flex flex-col  w-[90%] h-auto  gap-10">
+    <section id={id} className=" flex flex-col  w-[90%] h-auto  gap-10">
       <div className="flex flex-row w-full h-auto  ">
         <div className=" flex flex-col w-10 items-center justify-start relative left-4 ">
           <p ref={lineRef} className=" h-20 w-4 bg-purple-heart-700 "></p>
@@ -228,6 +228,6 @@ export default function Service() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
