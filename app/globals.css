@@ -5,6 +5,10 @@
   scroll-behavior: smooth;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 img {
   user-select: none;
   -webkit-user-select: none;
@@ -220,19 +224,19 @@ img {
   }
 
   .animation-text {
-    animation: hiddenText 0.45s 0.12s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation: hiddenText 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)  forwards;
   }
 
   .animation-reverse-text {
-    animation: -hiddenText 0.2s cubic-bezier(0.4, 0, 1, 1) forwards;
+    animation: -hiddenText 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)  forwards;
   }
 
   .animation-slide-menu {
-    animation: slideMenu 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation: slideMenu 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
   }
 
   .animation-reverse-slide-menu {
-    animation: -slideMenu 0.45s cubic-bezier(0.4, 0, 1, 1) forwards;
+    animation: -slideMenu 0.7s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards;
   }
 
 }
