@@ -52,7 +52,7 @@ const Data = [
   },
 ];
 
-export default function Acordeon() {
+export default function Acordeon({ id }: { id: string }) {
   const [openMenu, setOpenMenu] = useState<number | null>(null);
   const [previousOpenMenu, setPreviousOpenMenu] = useState<number | null>(null);
 
@@ -66,7 +66,7 @@ export default function Acordeon() {
     }
   };
   return (
-    <section className="acordeon-section relative w-full max-w-dvw overflow-x-hidden flex flex-col justify-between items-center">
+    <section id={id} className="acordeon-section relative w-full max-w-dvw overflow-x-hidden flex flex-col justify-between items-center">
       <div className="acordeon-layout flex w-full max-w-dvw overflow-hidden border border-purple-scale-stroke bg-ui-colors-background text-white z-[20] h-[512px]">
         <div className="acordeon-sidebar flex flex-col items-center relative z-[2] justify-items-start gap-2.5 px-5 py-3.5 border-purple-scale-stroke border border-l-0 border-b-0 border-t-0">
           <h2 className="font-Inter font-bold text-3xl  h-auto vertical mt-auto">
