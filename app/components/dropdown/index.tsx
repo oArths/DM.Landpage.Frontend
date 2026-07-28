@@ -1,0 +1,83 @@
+import * as I from 'lucide-react'
+import { useState, useRef, useEffect } from 'react'
+
+interface DropdownProps {
+  options: string[]
+  selectedOption: string
+  onOptionSelect: (option: string) => void
+  placeholder?: string
+  disabled?: boolean
+  filterKey?: string
+}
+
+export default function Dropdown({
+  options,
+  selectedOption,
+  onOptionSelect,
+  placeholder = 'Selecione...',
+  disabled = false,
+}: DropdownProps): React.JSX.Element {
+  const [isOpen, setIsOpen] = useState(false)
+  const dropdownRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsOpen(false)
+      }
+    }
+
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside)
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [isOpen])
+
+  const handleOptionClick = (option: string) => {
+    onOptionSelect(option)
+    setIsOpen(false)
+  }
+
+  return (
+    <div ref={dropdownRef} className="w-full relative">
+      <button
+        type="button"
+        onClick={() => !disabled && setIsOpen(!isOpen)}
+        disabled={disabled}
+        className={` text-sm lg:text-base  bg-ui-colors-background border border-grey-scale-onyx  py-2 px-5 rounded-sm min-w-60 w-full h-10 flex items-center justify-between cursor-pointer select-none ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}
+      >
+        <span className="truncate flex-1 items-start justify-start text-start">{selectedOption || placeholder}</span>
+        <I.ChevronDown
+          height="30px"
+          width="30px"
+          className={`stroke-text transition-transform duration-200 ${isOpen ? 'rotate-180' : 'rotate-0'}`}
+        />
+      </button>
+
+      {isOpen && (
+        <div className="bg-ui-colors-background border border-grey-scale-onyx shadow-md min-w-60 w-full  absolute z-20 top-12">
+          <ul className="flex flex-col max-h-48 overflow-y-auto ">
+            {options.map((option) => (
+              <li
+                key={option}
+                onClick={() => handleOptionClick(option)}
+                className={`flex items-start justify-start py-2 px-3 hover:bg-purple-heart-700/10 hover:text-gray-scale-text rounded-md cursor-pointer  ${selectedOption === option ? 'bg-purple-heart-700/10 text-gray-scale-text ' : 'text-gray-scale-text/40 '}`}
+              >
+                {option}
+
+              </li>
+            ))}
+            {options.length === 0 && (
+              <li className="py-2 px-3 text-sm text-grey-scale-dim-gray text-center">
+                Nenhuma opção disponível
+              </li>
+            )}
+          </ul>
+        </div>
+      )}
+    </div>
+  )
+}
