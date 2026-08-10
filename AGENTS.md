@@ -1,5 +1,8 @@
 # DM.Landpage.Frontend - Agent Instructions
 
+## Workflow
+- **Before implementing anything, always ask the user whether they want to commit the current state first.** Only proceed to change files after confirming (or being told to skip committing).
+
 ## Overview
 Next.js 15 (App Router) landing page for Data Mastery (Portuguese content). TypeScript (strict), Tailwind CSS v4. Package manager: npm.
 
