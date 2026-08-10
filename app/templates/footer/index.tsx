@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { FaYoutube, FaDiscord, FaInstagram, FaLinkedin, FaWhatsapp, FaEnvelope } from "react-icons/fa";
 import SmoothScrollLink from "../../components/SmoothScrollLink";
+import { FaYoutube, FaDiscord, FaInstagram, FaLinkedin, FaWhatsapp, FaEnvelope } from "react-icons/fa";
 export default function Footer() {
   return (
     <footer className="bg-ui-colors-footer-background px-20 py-12 w-full">

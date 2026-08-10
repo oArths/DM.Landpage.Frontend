@@ -169,7 +169,7 @@ export default function Service({ id }: { id: string }) {
                     Engenharia de Dados & Machine Learning
                   </h3>
                 </span>
-                <ol className="ml-11 mt-7">
+                <ol className="ml-11 mt-7 list-disc list-inside">
                   <li>Power BI</li>
                   <li>SQL</li>
                   <li>Engenharia de Dados com Python</li>
@@ -187,7 +187,7 @@ export default function Service({ id }: { id: string }) {
                     Automação de Processos & Programação
                   </h3>
                 </span>
-                <ol className="ml-11 mt-7">
+                <ol className="ml-11 mt-7 list-disc list-inside">
                   <li>Lógica de Programação</li>
                   <li>Automação com Python</li>
                   <li>UiPath</li>
@@ -203,7 +203,7 @@ export default function Service({ id }: { id: string }) {
                     Ferramentas de Produtividade & Web Design
                   </h3>
                 </span>
-                <ol className="ml-11 mt-7">
+                <ol className="ml-11 mt-7 list-disc list-inside">
                   <li>Figma / FigJam</li>
                   <li>Excel e Pacotes Office</li>
                   <li>HTML/CSS</li>
@@ -218,7 +218,7 @@ export default function Service({ id }: { id: string }) {
                     Ferramentas de DevOps & Gerenciameno de Código
                   </h3>
                 </span>
-                <ol className="ml-11 mt-7">
+                <ol className="ml-11 mt-7 list-disc list-inside">
                   <li>Docker</li>
                   <li>Git e Github</li>
                   <li>Kubernettes</li>

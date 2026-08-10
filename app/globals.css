@@ -232,7 +232,7 @@ img {
   .bg-vignette {
     background: radial-gradient(
       circle,
-      rgba(0, 3, 25, 0) 20%,
+      rgba(0, 3, 25, 0) 90%,
       var(--color-ui-colors-background) 100%
     );
   }
