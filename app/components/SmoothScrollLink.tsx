@@ -6,10 +6,12 @@ interface SmoothScrollLinkProps {
   children: React.ReactNode;
   className?: string;
   offset?: number;
+  onClick?: () => void;
 }
 
-export default function SmoothScrollLink({ href, children, className = "", offset = 80 }: SmoothScrollLinkProps) {
+export default function SmoothScrollLink({ href, children, className = "", offset = 80, onClick }: SmoothScrollLinkProps) {
   const handleClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>) => {
+    onClick?.();
     if (href.startsWith("#")) {
       e.preventDefault();
       const targetId = href.slice(1);
@@ -19,7 +21,7 @@ export default function SmoothScrollLink({ href, children, className = "", offse
         window.scrollTo({ top: targetPosition, behavior: "smooth" });
       }
     }
-  }, [href, offset]);
+  }, [href, offset, onClick]);
 
   return <a href={href} onClick={handleClick} className={className}>{children}</a>;
 }
