@@ -68,8 +68,8 @@ export default function Acordeon({ id }: { id: string }) {
   return (
     <section id={id} className="acordeon-section relative w-full max-w-dvw overflow-x-hidden flex flex-col justify-between items-center">
       <div className="acordeon-layout flex w-full max-w-dvw overflow-hidden border border-purple-scale-stroke bg-ui-colors-background text-white z-[20] h-[512px]">
-        <div className="acordeon-sidebar flex flex-col items-center relative z-[2] justify-items-start gap-2.5 px-5 py-3.5 border-purple-scale-stroke border border-l-0 border-b-0 border-t-0">
-          <h2 className="font-Inter font-bold text-3xl  h-auto vertical mt-auto">
+        <div className="acordeon-sidebar flex flex-col items-center relative z-[2] gap-2.5 px-5 py-3.5 border-purple-scale-stroke border border-l-0 border-b-0 border-t-0">
+          <h2 className="font-Inter font-bold text-3xl vertical mt-auto">
             Clientes & Parceiros
           </h2>
           <p className="bg-secondary-purple-heart h-2.5 w-10 trace" />
@@ -116,14 +116,13 @@ export default function Acordeon({ id }: { id: string }) {
               }`}
             >
               <label
-                className={` ${ index === openMenu ?  "text-gray-scale-text" :"text-white/70"} acordeon-trigger flex flex-row justify-between items-start h-full relative z-[3] bg-ui-colors-background px-5 pr-2.5 pl-8 font-Inter font-semibold  text-2xl vertical border-purple-scale-stroke border border-t-0 border-l-0`}
+                className={` ${ index === openMenu ?  "text-grey-scale-text" :"text-white/70"} acordeon-trigger flex flex-row justify-between items-start h-full relative z-[3] bg-ui-colors-background px-5 pr-2.5 pl-8 font-Inter font-semibold  text-2xl vertical border-purple-scale-stroke border border-t-0 border-l-0`}
                 onClick={() => selectMenu(index)}
               >
                 {item.titulo}
                 <I.ChevronDown
-                  color="oklch(76.81% 0.0099 279.64)"
                   size={24}
-                  className={`trigger ${
+                  className={`trigger text-grey-scale-french-gray ${
                     
                     openMenu === index
                       ? "animation-rotate-90"

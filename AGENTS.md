@@ -1,131 +1,70 @@
 # DM.Landpage.Frontend - Agent Instructions
 
-## Project Overview
-Next.js 15 (App Router) landing page for Data Mastery. TypeScript, Tailwind CSS v4.
-
-## Tech Stack
-- **Framework**: Next.js 15.2.2 (App Router)
-- **Language**: TypeScript (strict mode)
-- **Styling**: Tailwind CSS v4 (@tailwindcss/postcss)
-- **Fonts**: next/font/google (DM Sans, Inter, Lexend) via CSS variables
-- **Icons**: react-icons (Font Awesome) — replaced lucide-react
-- **Linting**: ESLint 9 with `next/core-web-vitals` + `next/typescript`
-- **Package Manager**: npm
-
-## Project Structure
-```
-app/
-├── components/          # Reusable UI components
-│   ├── acordeon/       # Accordion component (clients/partners)
-│   ├── contact/        # Contact form component
-│   └── dropdown/       # Select dropdown component
-├── templates/          # Page sections (composed in page.tsx)
-│   ├── header/
-│   ├── home/
-│   ├── services/
-│   ├── contact/
-│   └── footer/
-├── globals.css         # Global styles, animations, Tailwind v4 import
-├── layout.tsx          # Root layout, font setup
-└── page.tsx            # Main page composing templates
-```
-
-## Key Conventions
-
-### Components
-- **Client components**: Use `"use client"` directive at top
-- **Server components**: Default (no directive)
-- **Props typing**: Inline `{ prop: Type }` or interface above component
-- **Naming**: PascalCase for components, camelCase for props/functions
-- **Export**: Default export only
-
-### Styling (Tailwind v4)
-- Import: `@import "tailwindcss";` in globals.css
-- Custom colors via CSS variables (defined in globals.css `@theme` block)
-- Custom animations with `@keyframes` and cubic-bezier easings
-- Utility classes in `@layer utilities`
-- **No** `tailwind.config.js` — all config in CSS
-
-### Fonts
-Defined in `layout.tsx` as CSS variables:
-```tsx
-const lexend = Lexend({ variable: "--Lexend", ... });
-const inter = Inter({ variable: "--Inter", ... });
-const dmsans = DM_Sans({ variable: "--DMSans", ... });
-```
-Used in CSS: `font-family: var(--Lexend)` or Tailwind `font-Lexend` (via @theme)
-
-### Animations
-Custom keyframes in `globals.css`:
-- `rotate-90` / `-rotate-90` — chevron rotation
-- `slideMenu` / `-slideMenu` — side panel slide
-- `hiddenText` / `-hiddenText` — fade + slide up
-- Responsive variants in `@media (max-width: 1689px)`
-
-Easing curves:
-- Enter: `cubic-bezier(0.25, 0.46, 0.45, 0.94)` (ease-out natural)
-- Exit: `cubic-bezier(0.55, 0.055, 0.675, 0.19)` (ease-in natural)
-
-### Icons
-Use `react-icons/fa` (Font Awesome):
-```tsx
-import { FaWhatsapp, FaEnvelope, FaYoutube, FaDiscord, FaInstagram, FaLinkedin } from "react-icons/fa";
-```
-**Do not** use `lucide-react` — deprecated.
-
-### Section IDs & Smooth Scroll
-Sections in `page.tsx` pass `id` prop to templates:
-- `#inicio` (Home)
-- `#servicos` (Services)
-- `#clientes` (Acordeon/Clients)
-- `#contato` (Contact)
-
-Footer links use these anchors. `scroll-behavior: smooth` in globals.css.
-
-### Contact Links
-- WhatsApp: `https://wa.me/5511989639090` (opens app)
-- Email: `mailto:eduardo@ascending.solutions`
-- Social: external links with `target="_blank" rel="noopener noreferrer"`
+## Overview
+Next.js 15 (App Router) landing page for Data Mastery (Portuguese content). TypeScript (strict), Tailwind CSS v4. Package manager: npm.
 
 ## Commands
 ```bash
-npm run dev       # Development server
-npm run build     # Production build (typechecks + lint)
-npm run lint      # ESLint
-npm run typecheck # tsc --noEmit (if configured)
+npm run dev       # next dev --turbopack
+npm run build     # next build (typechecks + lints)
+npm run start     # next start
+npm run lint      # next lint
+npx tsc --noEmit  # typecheck (no npm script for this)
 ```
+There is **no** `typecheck` script. `build` is the full verification gate.
 
-## TypeScript
-- Strict mode enabled
-- Path alias: `@/*` → `./src/*` (but project uses `app/` directly)
-- No `src/` directory — code lives in `app/`
+## Routes & Structure
+- `/` (`app/page.tsx`) — composes `Home`, `Acordeon`, `Service`, `Contact` templates in order
+- `/about` (`app/about/page.tsx`) — renders `templates/homeAbout`
 
-## Common Patterns
-
-### Client Component with Refs/State
-```tsx
-"use client";
-import { useRef, useEffect, useState } from "react";
-
-export default function Component() {
-  const ref = useRef<HTMLDivElement>(null);
-  const [value, setValue] = useState(0);
-  // ...
-}
 ```
-
-### Animation Classes
-Apply via conditional className:
-```tsx
-className={isOpen ? "animation-slide-menu" : "animation-reverse-slide-menu"}
+app/
+├── components/
+│   ├── acordeon/       # Client accordion (clients & partners), inline data array
+│   ├── dropdown/       # Select dropdown (uses hooks but has NO "use client")
+│   └── SmoothScrollLink.tsx  # Client anchor link, JS scroll with 80px offset
+├── templates/          # Page sections
+│   ├── header/  home/  services/  contact/  footer/  homeAbout/
+├── about/page.tsx
+├── layout.tsx          # Root layout + next/font setup
+├── page.tsx
+└── globals.css         # Tailwind v4 @theme tokens, keyframes, @layer utilities
 ```
+`cores.css` at repo root is **not imported anywhere** — ignore it.
 
-### Responsive Breakpoints
-Mobile-first. Custom breakpoint at `1689px` in globals.css for accordion layout.
+## Conventions
 
-## Do Not
-- Don't create `tailwind.config.js` — use CSS `@theme`
-- Don't use `lucide-react` — use `react-icons/fa`
-- Don't add `@layer components` — prefer utility classes
-- Don't commit `node_modules` or `.next`
-- Don't disable `strict` in tsconfig
+### Components
+- `"use client"` at the top of any component with hooks/state that is itself a server-boundary entry (contact, acordeon, SmoothScrollLink).
+- `dropdown` deliberately lacks the directive — it only works inside client parents (`templates/contact`). Keep that pattern if it works; add the directive if you import it from a server component.
+- Default export only; PascalCase components.
+
+### Styling (Tailwind v4)
+- No `tailwind.config.js`. All tokens live in `globals.css` `@theme` block (oklch values): `--color-ui-colors-background`, `--color-secondary-purple-heart`, `--color-grey-scale-onyx`, `--color-purple-scale-stroke`, etc. → utilities like `bg-ui-colors-background`, `text-secondary-purple-heart`.
+- Custom animation utilities in `@layer utilities` (e.g. `animation-slide-menu`, `animation-text`, `animation-rotate-90` + reverse variants, `bg-vignette` for the page radial-gradient overlay). Toggle via conditional className.
+- Accordion switches to vertical layout under `@media (max-width: 1689px)` in globals.css — keep these rules in CSS, not JS.
+- Don't add `@layer components`.
+
+### Fonts
+`layout.tsx` defines `Lexend`/`Inter`/`DM_Sans` via `next/font/google` with CSS variables `--Lexend`, `--Inter`, `--DMSans`. `@theme` maps these to utilities `font-Lexend`, `font-Inter`, `font-DMSans` via `--font-*: var(--Lexend)` (etc.) — don't hardcode font stacks in `@theme`. **Case matters** in the utility names.
+
+### Icons
+Both icon sets are in active use — pick per file:
+- `react-icons/fa` (footer, contact): `FaWhatsapp`, `FaEnvelope`, `FaYoutube`, `FaDiscord`, `FaInstagram`, `FaLinkedin`
+- `lucide-react` imported as `import * as I from "lucide-react"` (acordeon, dropdown), used as `<I.ChevronDown />`
+
+### Section IDs & Scroll
+IDs are passed via `id` prop in `page.tsx`: `#empresa` (Home), `#clientes` (Acordeon), `#servicos` (Service), `#contato` (Contact).
+Footer links via `SmoothScrollLink` to `#servicos`, `#clientes`, and `#empresa`. `scroll-behavior: smooth` is in globals.css.
+
+### Contact Links
+- WhatsApp: `https://wa.me/5511989639090`
+- Email: `mailto:eduardo@ascending.solutions`
+- External links: `target="_blank" rel="noopener noreferrer"`
+
+## Gotchas
+- **Both `yarn.lock` and `package-lock.json` are tracked.** Use npm for installs; don't delete either without the user's OK.
+- **Path alias `@/*` → `./src/*` in tsconfig does not exist** (`src/` is not present). All imports are relative — don't use `@/` imports.
+- TS strict mode is on; don't disable it.
+- Images use `next/image` with `fill` (`/images/logoPurple.svg`); footer sets `unoptimized`.
+- Don't commit `node_modules`, `.next`, or `*.tsbuildinfo`.

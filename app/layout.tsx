@@ -6,16 +6,19 @@ import { DM_Sans, Inter, Lexend } from "next/font/google";
 
 const lexend = Lexend({
   weight: ["600", "700", "800"],
+  subsets: ["latin"],
   variable: "--Lexend",
   display: "swap",
 });
 const inter = Inter({
   weight: ["200", "300", "400", "500"],
+  subsets: ["latin"],
   variable: "--Inter",
   display: "swap",
 });
 const dmsans = DM_Sans({
   weight: ["300", "400", "500", "600", "700"],
+  subsets: ["latin"],
   variable: "--DMSans",
   display: "swap",
 });

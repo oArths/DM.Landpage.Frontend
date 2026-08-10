@@ -47,13 +47,11 @@ export default function Dropdown({
         type="button"
         onClick={() => !disabled && setIsOpen(!isOpen)}
         disabled={disabled}
-        className={` text-sm lg:text-base  bg-ui-colors-background border border-grey-scale-onyx  py-2 px-5 rounded-sm min-w-60 w-full h-10 flex items-center justify-between cursor-pointer select-none ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}
+        className={` text-sm lg:text-base  bg-ui-colors-background border border-grey-scale-onyx  py-2 px-5 rounded-sm min-w-60 w-full h-10 flex items-center justify-between cursor-pointer select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-heart-500 ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}
       >
         <span className="truncate flex-1 items-start justify-start text-start">{selectedOption || placeholder}</span>
         <I.ChevronDown
-          height="30px"
-          width="30px"
-          className={`stroke-text transition-transform duration-200 ${isOpen ? 'rotate-180' : 'rotate-0'}`}
+          className={`size-7.5 transition-transform duration-200 ${isOpen ? 'rotate-180' : 'rotate-0'}`}
         />
       </button>
 
@@ -64,7 +62,7 @@ export default function Dropdown({
               <li
                 key={option}
                 onClick={() => handleOptionClick(option)}
-                className={`flex items-start justify-start py-2 px-3 hover:bg-purple-heart-700/10 hover:text-gray-scale-text rounded-md cursor-pointer  ${selectedOption === option ? 'bg-purple-heart-700/10 text-gray-scale-text ' : 'text-gray-scale-text/40 '}`}
+                className={`flex items-start justify-start py-2 px-3 hover:bg-purple-heart-700/10 hover:text-grey-scale-text rounded-md cursor-pointer  ${selectedOption === option ? 'bg-purple-heart-700/10 text-grey-scale-text ' : 'text-grey-scale-text/40 '}`}
               >
                 {option}
 

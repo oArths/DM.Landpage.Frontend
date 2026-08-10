@@ -25,7 +25,7 @@ export default function Footer() {
             <SmoothScrollLink href="#clientes" className="font-DMSans font-normal text-lg text-grey-scale-french-gray hover:text-secondary-purple-heart transition-colors">
               Clientes & Parceiros
             </SmoothScrollLink>
-            <SmoothScrollLink href="#inicio" className="font-DMSans font-normal text-lg text-grey-scale-french-gray hover:text-secondary-purple-heart transition-colors">
+            <SmoothScrollLink href="#empresa" className="font-DMSans font-normal text-lg text-grey-scale-french-gray hover:text-secondary-purple-heart transition-colors">
               Nossa Empresa
             </SmoothScrollLink>
           </span>
@@ -47,16 +47,16 @@ export default function Footer() {
               Nossas Redes
             </h2>
             <div className="flex flex-row gap-4">
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="hover:text-secondary-purple-heart transition-colors">
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="text-grey-scale-off-white hover:text-secondary-purple-heart transition-colors">
                 <FaYoutube size={24} />
               </a>
-              <a href="https://discord.com" target="_blank" rel="noopener noreferrer" className="hover:text-secondary-purple-heart transition-colors">
+              <a href="https://discord.com" target="_blank" rel="noopener noreferrer" className="text-grey-scale-off-white hover:text-secondary-purple-heart transition-colors">
                 <FaDiscord size={24} />
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-secondary-purple-heart transition-colors">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-grey-scale-off-white hover:text-secondary-purple-heart transition-colors">
                 <FaInstagram size={24} />
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-secondary-purple-heart transition-colors">
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-grey-scale-off-white hover:text-secondary-purple-heart transition-colors">
                 <FaLinkedin size={24} />
               </a>
             </div>

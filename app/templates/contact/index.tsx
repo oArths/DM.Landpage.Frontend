@@ -44,11 +44,11 @@ export default function Contact({ id }: { id: string }) {
     <section id={id} className="relative bg-ui-colors-background w-[90%]">
       <div className=" flex flex-row items-start justify-start gap-2.5">
         <p className="bg-secondary-purple-heart h-10 w-2.5 trace" />
-        <h2 className="font-Inter font-bold text-3xl  h-auto">
+        <h2 className="font-Inter font-bold text-3xl">
           Entre em Contato
         </h2>
       </div>
-      <h2 className="font-Inter font-light text-[18px] text-grey-scale-text tracking-widest  mt-3.5 ml-6 mb-24">
+      <h2 className="font-Inter font-light text-lg text-grey-scale-text tracking-widest  mt-3.5 ml-6 mb-24">
         Alguma dúvida? Descubra como nossas soluções podem direcionar sua
         empresa ao sucesso. Entre e contato para conhecer o poder da Ciência de
         Dados e do Power BI.
@@ -59,7 +59,7 @@ export default function Contact({ id }: { id: string }) {
             <div className="w-1/2">
               <label
                 htmlFor="nomeSocial"
-                className="font-Inter font-normal text-[18px] text-grey-scale-off-white mb-2 block"
+                className="font-Inter font-normal text-lg text-grey-scale-off-white mb-2 block"
               >
                 Nome Social
               </label>
@@ -77,7 +77,7 @@ export default function Contact({ id }: { id: string }) {
             <div className="w-1/2">
               <label
                 htmlFor="telefone"
-                className="font-Inter font-normal text-[18px] text-grey-scale-off-white mb-2 block"
+                className="font-Inter font-normal text-lg text-grey-scale-off-white mb-2 block"
               >
                 Telefone
               </label>
@@ -96,7 +96,7 @@ export default function Contact({ id }: { id: string }) {
             <div className="w-1/2">
               <label
                 htmlFor="email"
-                className="font-Inter font-normal text-[18px] text-grey-scale-off-white mb-2 block"
+                className="font-Inter font-normal text-lg text-grey-scale-off-white mb-2 block"
               >
                 E-mail
               </label>
@@ -113,7 +113,7 @@ export default function Contact({ id }: { id: string }) {
             <div className="w-1/2">
               <label
                 htmlFor="motivoContato"
-                className="font-Inter font-normal text-[18px] text-grey-scale-off-white mb-2 block"
+                className="font-Inter font-normal text-lg text-grey-scale-off-white mb-2 block"
               >
                 Motivo do Contato
               </label>
@@ -152,7 +152,7 @@ export default function Contact({ id }: { id: string }) {
         <div className=" flex justify-start">
           <button
             type="submit"
-            className=" flex items-center justify-center gap-3  bg-secondary-purple-heart text-white font-semibold font-DMSans text-base py-3 w-1/3 rounded-sm hover:border-purple-heart-500 hover:bg-purple-heart-900/30 transition-colors"
+              className=" flex items-center justify-center gap-3  bg-secondary-purple-heart text-white font-semibold font-DMSans text-base py-3 w-1/3 rounded-sm hover:border-purple-heart-500 hover:bg-purple-heart-900/30 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-heart-500"
           >
             Enviar
           </button>

@@ -1,10 +1,5 @@
 @import "tailwindcss";
 
-* {
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -239,21 +234,28 @@ img {
     animation: -slideMenu 0.7s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards;
   }
 
+  .bg-vignette {
+    background: radial-gradient(
+      circle,
+      rgba(0, 3, 25, 0) 20%,
+      var(--color-ui-colors-background) 100%
+    );
+  }
+
 }
 
 @theme {
-  --font-DMSans: 'DM Sans', sans-serif;
-  --font-Inter: 'Inter', sans-serif;
-  --font-Lexend: 'Lexend', sans-serif;
-  --radius-full: 100%;
-  --color-primary-indigo: oklch(34.48% 0.182277 301.7673);
-  --color-secondary-purple-heart: oklch(59.99% 0.2412 293.08);
-  --color-secondary-spring-green: oklch(92.97% 0.1823 129.21);
+  --font-DMSans: var(--DMSans);
+  --font-Inter: var(--Inter);
+  --font-Lexend: var(--Lexend);
+  --color-primary-indigo: var(--color-indigo-500);
+  --color-secondary-purple-heart: var(--color-purple-heart-500);
+  --color-secondary-spring-green: var(--color-spring-green-500);
   --color-grey-scale-off-white: oklch(99.01% 0.0034 247.86);
   --color-grey-scale-french-gray: oklch(83.59% 0 0);
   --color-grey-scale-dim-gray: oklch(59.99% 0 0);
   --color-grey-scale-onyx: oklch(32.72% 0.0067 248.03);
-  --color-gray-scale-text: oklch(94.27% 0.0271 267.53);
+  --color-grey-scale-text: oklch(94.27% 0.0271 267.53);
   --color-grey-scale-eerie-black: oklch(20.71% 0.0076 248.19);
   --color-grey-scale-stroke-for-white: oklch(82.97% 0 0);
   --color-purple-scale-stroke: oklch(38.32% 0.0654 274.94);
