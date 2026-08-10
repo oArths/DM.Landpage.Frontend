@@ -19,13 +19,13 @@ export default function Footer() {
             <h2 className="font-DMSans font-bold text-xl text-grey-scale-french-gray mb-1">
               Explore
             </h2>
-            <SmoothScrollLink href="#servicos" className="font-DMSans font-normal text-lg text-grey-scale-french-gray hover:text-secondary-purple-heart transition-colors">
+            <SmoothScrollLink href="/#servicos" className="font-DMSans font-normal text-lg text-grey-scale-french-gray hover:text-secondary-purple-heart transition-colors">
               Nossos Serviços
             </SmoothScrollLink>
-            <SmoothScrollLink href="#clientes" className="font-DMSans font-normal text-lg text-grey-scale-french-gray hover:text-secondary-purple-heart transition-colors">
+            <SmoothScrollLink href="/#clientes" className="font-DMSans font-normal text-lg text-grey-scale-french-gray hover:text-secondary-purple-heart transition-colors">
               Clientes & Parceiros
             </SmoothScrollLink>
-            <SmoothScrollLink href="#empresa" className="font-DMSans font-normal text-lg text-grey-scale-french-gray hover:text-secondary-purple-heart transition-colors">
+            <SmoothScrollLink href="/#empresa" className="font-DMSans font-normal text-lg text-grey-scale-french-gray hover:text-secondary-purple-heart transition-colors">
               Nossa Empresa
             </SmoothScrollLink>
           </span>

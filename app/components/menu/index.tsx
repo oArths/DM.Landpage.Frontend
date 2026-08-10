@@ -27,28 +27,28 @@ export default function Menu({openMenu}: menuInterface) {
           <div className="flex flex-row items-center justify-around  w-[90%] h-full">
             <span className="flex flex-col   items-start justify-evenly h-full">
               <SmoothScrollLink
-                href="#clientes"
+                href="/#clientes"
                 onClick={openMenu}
                 className="font-DMSans font-semibold text-5xl text-grey-scale-french-gray hover:text-secondary-purple-heart transition-colors"
               >
                 Clientes & Parceiros
               </SmoothScrollLink>
               <SmoothScrollLink
-                href="#servicos"
+                href="/#servicos"
                 onClick={openMenu}
                 className="font-DMSans font-semibold text-5xl text-grey-scale-french-gray hover:text-secondary-purple-heart transition-colors"
               >
                 Serviços
               </SmoothScrollLink>
               <SmoothScrollLink
-                href="#empresa"
+                href="/#empresa"
                 onClick={openMenu}
                 className="font-DMSans font-semibold text-5xl text-grey-scale-french-gray hover:text-secondary-purple-heart transition-colors"
               >
                 Nossa Empresa
               </SmoothScrollLink>
               <SmoothScrollLink
-                href="#contato"
+                href="/#contato"
                 onClick={openMenu}
                 className="font-DMSans font-semibold text-5xl text-grey-scale-french-gray hover:text-secondary-purple-heart transition-colors"
               >
