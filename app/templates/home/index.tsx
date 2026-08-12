@@ -1,3 +1,4 @@
+import SmoothScrollLink from "../../components/SmoothScrollLink";
 export default function Home({ id }: { id?: string }) {
   return (
     <section id={id} className="relative flex items-center h-[90dvh] w-full">
@@ -13,9 +14,12 @@ export default function Home({ id }: { id?: string }) {
             Capacitando a sua Transformação Digital
           </h2>
         </span>
-        <button className="font-DMSans font-medium text-base h-10 cursor-pointer px-11 py-1.5 bg-secondary-purple-heart rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-heart-500">
+        <SmoothScrollLink
+          href="/#contato"
+          className="font-DMSans font-medium text-base h-10 cursor-pointer flex items-center justify-center px-11 py-1.5 bg-secondary-purple-heart rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-heart-500"
+        >
           Agende uma reunião
-        </button>
+        </SmoothScrollLink>
       </span>
       <div className="bg-primary-indigo z-[15] blur-3xl absolute opacity-20 bottom-20 left-[50%] w-[15vw] h-[15vw] rounded-full" />
       <div className="bg-primary-indigo z-[15] blur-3xl absolute opacity-20 top-48 right-[80%] w-[25vw] h-[25vw] rounded-full" />

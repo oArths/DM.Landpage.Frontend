@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Contact from "../templates/contact";
+import SmoothScrollLink from "../components/SmoothScrollLink";
 
 export default function EducationPage() {
   return (
@@ -12,9 +13,12 @@ export default function EducationPage() {
               <strong>Empresarial </strong>e<strong> Pessoal</strong>
             </h1>
 
-            <button className="font-DMSans text-grey-scale-off-white font-medium text-base h-10 cursor-pointer px-11 py-1.5 bg-secondary-purple-heart rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-heart-500">
+            <SmoothScrollLink
+              href="/education#EducationContact"
+              className="font-DMSans text-grey-scale-off-white font-medium text-base h-10 cursor-pointer flex items-center justify-center px-11 py-1.5 bg-secondary-purple-heart rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-heart-500"
+            >
               Agende uma reunião
-            </button>
+            </SmoothScrollLink>
           </span>
         </div>
       </section>

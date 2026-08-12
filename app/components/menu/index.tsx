@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import * as L from "lucide-react";
 import * as I from "react-icons/fa";
 import SmoothScrollLink from "../../components/SmoothScrollLink";
@@ -11,14 +12,14 @@ export default function Menu({openMenu}: menuInterface) {
     <section className="fixed inset-0 top-0 bg-ui-colors-background z-30  ">
       <div className="flex flex-col w-full  h-screen relative z-[50]">
         <div className="h-[90px] w-full bg-transparent flex items-center justify-between py-5 px-[60px]">
-          <div className="relative w-[51px] h-[51px]">
+          <Link href="/" onClick={openMenu} className="relative w-[51px] h-[51px]">
             <Image
               src="/images/logoPurple.svg"
               fill
               sizes="(max-width: 51px) 5vw"
               alt="Logo da Empresa Data Mastery"
             />
-          </div>
+          </Link>
           <div onClick={openMenu} className="cursor-pointer">
             <L.X size={24} strokeWidth={2}  className="text-grey-scale-off-white "/>
           </div>
@@ -41,7 +42,7 @@ export default function Menu({openMenu}: menuInterface) {
                 Serviços
               </SmoothScrollLink>
               <SmoothScrollLink
-                href="/#empresa"
+                href="/about"
                 onClick={openMenu}
                 className="font-DMSans font-semibold text-5xl text-grey-scale-french-gray hover:text-secondary-purple-heart transition-colors"
               >

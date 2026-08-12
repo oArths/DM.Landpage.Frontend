@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useRef, useEffect, useState } from "react";
 
 export default function Service({ id }: { id: string }) {
@@ -150,9 +151,12 @@ export default function Service({ id }: { id: string }) {
                 Automação Robótica (RPA), Python, Excel, Power BI e muito mais.
               </p>
             </div>
-            <button className="bg-ui-colors-background border border-purple-heart-700 text-white font-semibold font-DMSans text-base py-2 px-11 rounded w-fit focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-heart-500">
+            <Link
+              href="/education"
+              className="bg-ui-colors-background border border-purple-heart-700 text-white font-semibold font-DMSans text-base py-2 px-11 rounded w-fit focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-heart-500"
+            >
               Ver mais
-            </button>
+            </Link>
           </div>
           <div
             ref={cursosRef}
