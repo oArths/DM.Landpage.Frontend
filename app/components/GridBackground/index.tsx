@@ -5,7 +5,7 @@ interface GridBackgroundProps {
 
 export default function GridBackground({ highlight = [], className = "" }: GridBackgroundProps) {
   return (
-    <div className={`relative overflow-hidden rounded-full ${className}`}>
+    <div className={` overflow-hidden rounded-full ${className}`}>
       <div className="grid place-items-start grid-cols-4 sm:grid-cols-6 lg:grid-cols-[repeat(13,minmax(0,1fr))] lg:grid-rows-9">
         {Array.from({ length: 117 }).map((_, i) => (
           <div
