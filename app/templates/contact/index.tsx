@@ -44,7 +44,7 @@ export default function Contact({ id }: { id: string }) {
     <section id={id} className="relative bg-ui-colors-background w-[90%]">
       <div className=" flex flex-row items-start justify-start gap-2.5">
         <p className="bg-secondary-purple-heart h-10 w-2.5 trace" />
-        <h2 className="font-Inter font-bold text-3xl">
+        <h2 className="font-Inter font-bold text-3xl text-grey-scale-off-white ">
           Entre em Contato
         </h2>
       </div>

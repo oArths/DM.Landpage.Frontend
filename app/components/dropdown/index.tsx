@@ -49,9 +49,9 @@ export default function Dropdown({
         disabled={disabled}
         className={` text-sm lg:text-base  bg-ui-colors-background border border-grey-scale-onyx  py-2 px-5 rounded-sm min-w-60 w-full h-10 flex items-center justify-between cursor-pointer select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-heart-500 ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}
       >
-        <span className="truncate flex-1 items-start justify-start text-start">{selectedOption || placeholder}</span>
+        <span className="truncate flex-1 items-start justify-start text-start text-grey-scale-off-white">{selectedOption || placeholder}</span>
         <I.ChevronDown
-          className={`size-7.5 transition-transform duration-200 ${isOpen ? 'rotate-180' : 'rotate-0'}`}
+          className={`size-7.5 transition-transform duration-200 text-grey-scale-off-white ${isOpen ? 'rotate-180' : 'rotate-0'}`}
         />
       </button>
 

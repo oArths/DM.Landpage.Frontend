@@ -1,5 +1,5 @@
 import Image from "next/image";
-import *as I from "react-icons/fa";
+import * as I from "react-icons/fa";
 
 export default function AboutPage() {
   return (
