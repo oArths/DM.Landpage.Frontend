@@ -1,7 +1,7 @@
 import Contact from "../templates/contact";
-import ButtonPrimary from "../components/ButtonPrimary";
-import SectionTitle from "../components/SectionTitle";
 import BenefitCard from "../components/BenefitCard";
+import SectionTitle from "../components/SectionTitle";
+import ButtonPrimary from "../components/ButtonPrimary";
 
 export default function EducationPage() {
   return (

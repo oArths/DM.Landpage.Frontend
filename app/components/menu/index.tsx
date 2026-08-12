@@ -1,9 +1,9 @@
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 import * as L from "lucide-react";
 import * as I from "react-icons/fa";
-import SmoothScrollLink from "../../components/SmoothScrollLink";
 import GridBackground from "../../components/GridBackground";
+import SmoothScrollLink from "../../components/SmoothScrollLink";
 
 interface menuInterface {
   openMenu: () => void;
