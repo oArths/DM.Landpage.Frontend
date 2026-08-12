@@ -4,7 +4,7 @@ import Service from "./templates/services";
 import Acordeon from "./components/acordeon";
 export default function Main() {
   return (
-    <main className="min-h-screen flex flex-col items-center overflow-hidden text-white w-full h-full">
+    <main className="flex flex-col items-center w-full h-full min-h-screen overflow-hidden text-grey-scale-off-white">
       <Home id="empresa" />
       <Acordeon id="clientes" />
       <div className="bg-grey-scale-onyx w-[60%] h-px my-40" />

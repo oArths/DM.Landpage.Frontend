@@ -2,6 +2,11 @@
 import Link from "next/link";
 import { useRef, useEffect, useState } from "react";
 
+const cardTitleClasses = "font-Inter text-grey-scale-off-white w-full text-2xl text-left font-bold";
+const cardTextClasses = "font-DMSans text-grey-scale-off-white text-xl font-normal";
+const outlineButtonClasses =
+  "flex items-center justify-center w-fit py-2 px-11 font-DMSans text-grey-scale-off-white text-base font-semibold bg-ui-colors-background border border-purple-heart-700 rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-heart-500";
+
 export default function Service({ id }: { id: string }) {
   const consultoriaRef = useRef<HTMLDivElement>(null);
   const educacionalRef = useRef<HTMLDivElement>(null);
@@ -31,22 +36,22 @@ export default function Service({ id }: { id: string }) {
   }, []);
 
   return (
-    <section id={id} className=" flex flex-col  w-[90%] h-auto  gap-10">
-      <div className="flex flex-row w-full h-auto  ">
-        <div className=" flex flex-col w-10 items-center justify-start relative left-4 ">
-          <p ref={lineRef} className=" h-20 w-4 bg-purple-heart-700 "></p>
+    <section id={id} className="flex flex-col w-[90%] h-auto gap-10">
+      <div className="flex flex-row w-full h-auto">
+        <div className="relative flex flex-col items-center justify-start w-10 left-4">
+          <p ref={lineRef} className="h-20 w-4 bg-purple-heart-700"></p>
           <div
             style={{
               height: `${heights.container - heights.cursos}px`,
             }}
-            className={` flex items-start justify-center  w-1 bg-purple-heart-700 `}
+            className={`flex items-start justify-center w-1 bg-purple-heart-700`}
           ></div>
         </div>
         <div
           style={{
             height: `${heights.container - heights.cursos + heights.line}px`,
           }}
-          className="flex flex-col relative left-2"
+          className="relative flex flex-col left-2"
         >
           <div
             style={{
@@ -55,7 +60,7 @@ export default function Service({ id }: { id: string }) {
             className="flex flex-row items-center justify-center"
           >
             <div className="w-4 h-1 bg-purple-heart-700"></div>
-            <div className="dot p-2 "></div>
+            <div className="dot p-2"></div>
           </div>
           <div
             style={{
@@ -64,22 +69,22 @@ export default function Service({ id }: { id: string }) {
             className="flex flex-row items-center justify-center"
           >
             <div className="w-4 h-1 bg-purple-heart-700"></div>
-            <div className="dot p-2 "></div>
+            <div className="dot p-2"></div>
           </div>
-          <div className="flex flex-row items-center justify-center mt-auto relative top-[6px] ">
+          <div className="relative flex flex-row items-center justify-center mt-auto top-[6px]">
             <div className="w-4 h-1 bg-purple-heart-700"></div>
-            <div className="dot p-2 "></div>
+            <div className="dot p-2"></div>
           </div>
         </div>
         <div
           ref={containerRef}
-          className="bg-ui-colors-background  flex flex-col  items-center text-white h-full gap-10 "
+          className="flex flex-col items-center h-full gap-10 bg-ui-colors-background text-grey-scale-off-white"
         >
-          <div ref={servicosRef} className="flex flex-col  ml-10 gap-12 mb-10">
-            <h2 className="font-bold font-Inter text-3xl text-grey-scale-off-white text-left w-full">
+          <div ref={servicosRef} className="flex flex-col ml-10 mb-10 gap-12">
+            <h2 className="font-Inter text-grey-scale-off-white w-full text-3xl text-left font-bold">
               Linhas de Serviços Ofertados
             </h2>
-            <span className="font-normal   font-DMSans text-grey-scale-off-white text-xl">
+            <span className="font-DMSans text-grey-scale-off-white text-xl font-normal">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem
               ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -91,12 +96,10 @@ export default function Service({ id }: { id: string }) {
 
           <div
             ref={consultoriaRef}
-            className="flex flex-col items-end px-12 py-7 border border-purple-heart-700 rounded-lg gap-8 w-full"
+            className="flex flex-col items-end w-full px-12 py-7 gap-8 border border-purple-heart-700 rounded-lg"
           >
-            <h2 className="font-bold font-Inter text-2xl text-grey-scale-off-white text-left w-full">
-              Consultoria Empresarial
-            </h2>
-            <span className="font-normal   font-DMSans text-grey-scale-off-white text-xl">
+            <h2 className={cardTitleClasses}>Consultoria Empresarial</h2>
+            <span className={cardTextClasses}>
               Treinamentos personalizados para capacitar equipes nas áreas de
               Business Intelligence, Data Engineering & Data Science, Automação
               Robótica (RPA), Python, Excel, Power BI e muito mais.
@@ -108,19 +111,17 @@ export default function Service({ id }: { id: string }) {
               inovação, alinhando-se aos desafios específicos do seu negócio
             </span>
 
-            <button className="bg-ui-colors-background border border-purple-heart-700 text-white font-semibold font-DMSans text-base py-2 px-11 rounded w-fit focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-heart-500">
+            <button type="button" className={outlineButtonClasses}>
               Ver mais
             </button>
           </div>
 
           <div
             ref={educacionalRef}
-            className="flex flex-col items-end px-12 py-7 border border-purple-heart-700 rounded-lg gap-8 w-full"
+            className="flex flex-col items-end w-full px-12 py-7 gap-8 border border-purple-heart-700 rounded-lg"
           >
-            <h2 className="font-bold font-Inter text-2xl text-grey-scale-off-white text-left w-full">
-              Educacional
-            </h2>
-            <span className="font-normal   font-DMSans text-grey-scale-off-white text-xl">
+            <h2 className={cardTitleClasses}>Educacional</h2>
+            <span className={cardTextClasses}>
               Treinamentos personalizados para capacitar equipes nas áreas de
               Business Intelligence, Data Engineering & Data Science, Automação
               Robótica (RPA), Python, Excel, Power BI e muito mais.
@@ -128,11 +129,11 @@ export default function Service({ id }: { id: string }) {
             <div className="flex flex-col items-start gap-8">
               <span className="flex flex-row items-center gap-4">
                 <p className="dot"></p>
-                <h3 className="font-semibold font-Inter text-2xl text-grey-scale-off-white ">
+                <h3 className="font-Inter text-grey-scale-off-white text-2xl font-semibold">
                   Pessoa Física
                 </h3>
               </span>
-              <p className="font-normal   font-DMSans text-grey-scale-off-white text-xl pl-10">
+              <p className="font-DMSans text-grey-scale-off-white pl-10 text-xl font-normal">
                 Treinamentos personalizados para capacitar equipes nas áreas de
                 Business Intelligence, Data Engineering & Data Science,
                 Automação Robótica (RPA), Python, Excel, Power BI e muito mais.
@@ -141,35 +142,30 @@ export default function Service({ id }: { id: string }) {
             <div className="flex flex-col items-start gap-8">
               <span className="flex flex-row items-center gap-4">
                 <p className="dot"></p>
-                <h3 className="font-semibold font-Inter text-2xl text-grey-scale-off-white ">
+                <h3 className="font-Inter text-grey-scale-off-white text-2xl font-semibold">
                   Pessoa Jurídica / Empresas
                 </h3>
               </span>
-              <p className="font-normal   font-DMSans text-grey-scale-off-white text-xl pl-10">
+              <p className="font-DMSans text-grey-scale-off-white pl-10 text-xl font-normal">
                 Treinamentos personalizados para capacitar equipes nas áreas de
                 Business Intelligence, Data Engineering & Data Science,
                 Automação Robótica (RPA), Python, Excel, Power BI e muito mais.
               </p>
             </div>
-            <Link
-              href="/education"
-              className="bg-ui-colors-background border border-purple-heart-700 text-white font-semibold font-DMSans text-base py-2 px-11 rounded w-fit focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-heart-500"
-            >
+            <Link href="/education" className={outlineButtonClasses}>
               Ver mais
             </Link>
           </div>
           <div
             ref={cursosRef}
-            className="flex flex-col items-end px-12 py-7 border border-purple-heart-700 rounded-lg gap-8 w-full pb-20"
+            className="flex flex-col items-end w-full px-12 py-7 pb-20 gap-8 border border-purple-heart-700 rounded-lg"
           >
-            <h2 className="font-bold font-Inter text-2xl text-grey-scale-off-white text-left w-full">
-              Cursos completos / Áreas de Aprendizado
-            </h2>
-            <div className="grid grid-cols-2 gap-12 w-full">
+            <h2 className={cardTitleClasses}>Cursos completos / Áreas de Aprendizado</h2>
+            <div className="grid grid-cols-2 w-full gap-12">
               <div>
                 <span className="flex flex-row items-center gap-4">
                   <p className="dot"></p>
-                  <h3 className="font-semibold font-Inter text-2xl text-grey-scale-off-white ">
+                  <h3 className="font-Inter text-grey-scale-off-white text-2xl font-semibold">
                     Engenharia de Dados & Machine Learning
                   </h3>
                 </span>
@@ -187,7 +183,7 @@ export default function Service({ id }: { id: string }) {
                 <span className="flex flex-row items-center gap-4">
                   <p className="dot"></p>
 
-                  <h3 className="font-semibold font-Inter text-2xl text-grey-scale-off-white ">
+                  <h3 className="font-Inter text-grey-scale-off-white text-2xl font-semibold">
                     Automação de Processos & Programação
                   </h3>
                 </span>
@@ -203,7 +199,7 @@ export default function Service({ id }: { id: string }) {
                 <span className="flex flex-row items-center gap-4">
                   <p className="dot"></p>
 
-                  <h3 className="font-semibold font-Inter text-2xl text-grey-scale-off-white ">
+                  <h3 className="font-Inter text-grey-scale-off-white text-2xl font-semibold">
                     Ferramentas de Produtividade & Web Design
                   </h3>
                 </span>
@@ -218,7 +214,7 @@ export default function Service({ id }: { id: string }) {
                 <span className="flex flex-row items-center gap-4">
                   <p className="dot"></p>
 
-                  <h3 className="font-semibold font-Inter text-2xl text-grey-scale-off-white ">
+                  <h3 className="font-Inter text-grey-scale-off-white text-2xl font-semibold">
                     Ferramentas de DevOps & Gerenciameno de Código
                   </h3>
                 </span>

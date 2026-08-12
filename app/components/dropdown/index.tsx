@@ -47,7 +47,7 @@ export default function Dropdown({
         type="button"
         onClick={() => !disabled && setIsOpen(!isOpen)}
         disabled={disabled}
-        className={` text-sm lg:text-base  bg-ui-colors-background border border-grey-scale-onyx  py-2 px-5 rounded-sm min-w-60 w-full h-10 flex items-center justify-between cursor-pointer select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-heart-500 ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}
+        className={`flex items-center justify-between w-full h-10 min-w-60 py-2 px-5 text-sm lg:text-base bg-ui-colors-background border border-grey-scale-onyx rounded-sm select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-heart-500 ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}
       >
         <span className="truncate flex-1 items-start justify-start text-start text-grey-scale-off-white">{selectedOption || placeholder}</span>
         <I.ChevronDown
@@ -56,13 +56,13 @@ export default function Dropdown({
       </button>
 
       {isOpen && (
-        <div className="bg-ui-colors-background border border-grey-scale-onyx shadow-md min-w-60 w-full  absolute z-20 top-12">
-          <ul className="flex flex-col max-h-48 overflow-y-auto ">
+        <div className="bg-ui-colors-background absolute top-12 z-20 w-full min-w-60 shadow-md border border-grey-scale-onyx">
+          <ul className="flex flex-col max-h-48 overflow-y-auto">
             {options.map((option) => (
               <li
                 key={option}
                 onClick={() => handleOptionClick(option)}
-                className={`flex items-start justify-start py-2 px-3 hover:bg-purple-heart-700/10 hover:text-grey-scale-text rounded-md cursor-pointer  ${selectedOption === option ? 'bg-purple-heart-700/10 text-grey-scale-text ' : 'text-grey-scale-text/40 '}`}
+                className={`flex items-start justify-start py-2 px-3 rounded-md cursor-pointer hover:bg-purple-heart-700/10 hover:text-grey-scale-text ${selectedOption === option ? 'bg-purple-heart-700/10 text-grey-scale-text' : 'text-grey-scale-text/40'}`}
               >
                 {option}
 
