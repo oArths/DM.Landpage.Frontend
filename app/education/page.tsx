@@ -2,16 +2,82 @@ import Contact from "../templates/contact";
 import BenefitCard from "../components/BenefitCard";
 import SectionTitle from "../components/SectionTitle";
 import ButtonPrimary from "../components/ButtonPrimary";
+import JsonLd from "../components/JsonLd";
+import { siteConfig } from "../config/site";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Educacional - Treinamentos em Dados, BI e Automação",
+  description:
+    "Treinamentos personalizados em Business Intelligence, Power BI, Data Engineering, Data Science, Python, Excel e RPA. Cursos sob medida para empresas e profissionais.",
+  alternates: {
+    canonical: "/education",
+  },
+  openGraph: {
+    title: "Educacional - Treinamentos em Dados, BI e Automação | Data Mastery",
+    description:
+      "Treinamentos personalizados em Business Intelligence, Power BI, Data Engineering, Data Science, Python, Excel e RPA.",
+    url: `${siteConfig.url}/education`,
+    type: "website",
+  },
+};
+
+const coursesSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Início",
+          item: siteConfig.url,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Educacional",
+          item: `${siteConfig.url}/education`,
+        },
+      ],
+    },
+    ...[
+      "Business Intelligence e Power BI",
+      "Data Engineering e Python",
+      "Data Science e Machine Learning",
+      "Automação Robótica (RPA)",
+    ].map((courseName) => ({
+      "@type": "Course",
+      name: courseName,
+      description: `Treinamento personalizado em ${courseName} oferecido pela ${siteConfig.name}, adaptado às necessidades de empresas e profissionais.`,
+      inLanguage: "pt-BR",
+      provider: {
+        "@id": `${siteConfig.url}/#organization`,
+        "@type": "Organization",
+        name: siteConfig.name,
+        url: siteConfig.url,
+      },
+      hasCourseInstance: {
+        "@type": "CourseInstance",
+        courseMode: "onsite",
+        courseWorkload: "PT16H",
+        inLanguage: "pt-BR",
+      },
+    })),
+  ],
+};
 
 export default function EducationPage() {
   return (
     <main className="flex flex-col items-center justify-center w-full min-h-screen mb-32 bg-ui-colors-background">
+      <JsonLd data={coursesSchema} />
       <section className="flex flex-col w-full mb-20">
         <div className="flex justify-center w-full h-fit p-24 bg-[url('/images/educationBackground.svg')] bg-cover">
           <span className="flex flex-col items-start justify-center w-[90%] gap-7">
             <h1 className="font-Lexend text-grey-scale-off-white text-5xl">
-              <strong>Educacional:</strong> Sob Encomenda para Crescimento
-              <strong>Empresarial </strong>e<strong> Pessoal</strong>
+              <strong>Educacional:</strong> Sob Encomenda para Crescimento{" "}
+              <strong>Empresarial </strong>e <strong>Pessoal</strong>
             </h1>
 
             <ButtonPrimary
@@ -43,7 +109,7 @@ export default function EducationPage() {
         <div className="grid grid-cols-2 gap-16">
           <BenefitCard
             icon="/images/iconUp.svg"
-            alt="Icone de Upgrade"
+            alt="Ícone de crescimento e desempenho"
             title="Desempenho Aprimorado"
           >
             Ao capacitar seus colaboradores em ferramentas como Power BI e IA,
@@ -52,7 +118,7 @@ export default function EducationPage() {
           </BenefitCard>
           <BenefitCard
             icon="/images/Union.svg"
-            alt="Icone de Upgrade"
+            alt="Ícone de união e retenção de talentos"
             title="Retenção de talentos"
           >
             Investir em educação corporativa é uma estratégia eficaz para reter
@@ -61,7 +127,7 @@ export default function EducationPage() {
           </BenefitCard>
           <BenefitCard
             icon="/images/bi_person-plus-fill.svg"
-            alt="Icone de Upgrade"
+            alt="Ícone de integração de pessoas"
             title="Integração e Motivação"
           >
             O treinamento fortalece a integração das equipes e promove um
@@ -70,7 +136,7 @@ export default function EducationPage() {
           </BenefitCard>
           <BenefitCard
             icon="/images/bx_bxs-time-five.svg"
-            alt="Icone de Upgrade"
+            alt="Ícone de relógio e aplicação imediata"
             title="Aplicação Imediata"
           >
             Focamos na transferência de conhecimento que pode ser imediatamente

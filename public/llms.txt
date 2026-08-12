@@ -1,0 +1,32 @@
+# Data Mastery
+
+> Capacitando a sua Transformação Digital. Consultoria educacional e treinamentos em Business Intelligence, Data Engineering, Data Science, Python e RPA.
+
+A Data Mastery é uma empresa de serviços educacionais e consultorias especializada em Business Intelligence, Data Engineering, Data Science e Automação Robótica (RPA). Nosso propósito é ajudar empresas e profissionais a se desenvolverem na área de dados e gerar transformação digital.
+
+## Empresa
+
+- Nome: Data Mastery (Data Mastery Tech)
+- Setor: Serviços educacionais e consultoria em tecnologia de dados
+- Público: Empresas (Pessoa Jurídica) e profissionais (Pessoa Física)
+- Área de atuação: Brasil
+- Contato: eduardo@ascending.solutions
+- WhatsApp: +55 11 98963-9090
+
+## Páginas
+
+- [Início](https://datamastery.com.br/): Visão geral da empresa e serviços.
+- [Sobre Nós](https://datamastery.com.br/about): História, missão, visão e valores.
+- [Educacional](https://datamastery.com.br/education): Treinamentos personalizados em Power BI, Business Intelligence, Data Engineering, Data Science, Python, Excel e RPA.
+
+## Serviços
+
+- Business Intelligence e Power BI
+- Data Engineering
+- Data Science e Machine Learning
+- Automação Robótica (RPA)
+- Treinamentos em Python e Excel
+
+## Contato
+
+Para agendar uma reunião ou contratar serviços, acesse o formulário de contato na página principal ou envie um e-mail para eduardo@ascending.solutions.

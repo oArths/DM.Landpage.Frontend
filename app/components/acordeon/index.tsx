@@ -147,7 +147,7 @@ export default function Acordeon({ id }: { id: string }) {
                 }`}
               >
                 <div className="acordeon-content w-[min(420px,calc(100dvw-15rem))] shrink-0">
-                  <h2
+                  <h3
                     className={`font-Inter text-2xl font-bold shrink-[0] w-max whitespace-nowrap flex-none ${
                       openMenu === index
                         ? "flex animation-text"
@@ -157,7 +157,7 @@ export default function Acordeon({ id }: { id: string }) {
                     }`}
                   >
                     {item.titulo}
-                  </h2>
+                  </h3>
                   <span
                     className={`font-DMSans text-base font-normal block w-full text-left whitespace-normal break-words ${
                       openMenu === index

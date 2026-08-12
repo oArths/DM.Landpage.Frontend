@@ -50,11 +50,11 @@ export default function Contact({ id }: { id: string }) {
           Entre em Contato
         </h2>
       </div>
-      <h2 className="font-Inter text-grey-scale-text tracking-widest mt-3.5 ml-6 mb-24 text-lg font-light">
+      <p className="font-Inter text-grey-scale-text tracking-widest mt-3.5 ml-6 mb-24 text-lg font-light">
         Alguma dúvida? Descubra como nossas soluções podem direcionar sua
-        empresa ao sucesso. Entre e contato para conhecer o poder da Ciência de
-        Dados e do Power BI.
-      </h2>
+        empresa ao sucesso. Entre em contato para conhecer o poder da Ciência
+        de Dados e do Power BI.
+      </p>
       <form onSubmit={handleSubmit} className="flex flex-col gap-12">
         <div className="flex flex-col gap-12">
           <div className="flex flex-row items-center justify-between gap-24">

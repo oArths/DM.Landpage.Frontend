@@ -2,15 +2,21 @@ import Image from "next/image";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 interface TeamCardProps {
-  name?: string;
-  role?: string;
-  image?: string;
+  name: string;
+  role: string;
+  image: string;
+  alt?: string;
+  linkedin?: string;
+  github?: string;
 }
 
 export default function TeamCard({
-  name = "Nome Sobrenome",
-  role = "Cargo",
-  image = "/images/UserImage.svg",
+  name,
+  role,
+  image,
+  alt,
+  linkedin,
+  github,
 }: TeamCardProps) {
   return (
     <div className="flex flex-col items-center justify-center w-fit gap-5">
@@ -19,7 +25,7 @@ export default function TeamCard({
           src={image}
           fill
           sizes="(max-width: 51px) 5vw"
-          alt={`Foto de ${name}`}
+          alt={alt ?? `Imagem representativa de ${name}`}
           unoptimized
         />
       </div>
@@ -31,26 +37,32 @@ export default function TeamCard({
           {role}
         </p>
       </span>
-      <div className="flex flex-rows justify-evenly w-full">
-        <a
-          href="https://linkedin.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`LinkedIn de ${name}`}
-          className="text-grey-scale-off-white hover:text-secondary-purple-heart transition-colors"
-        >
-          <FaLinkedin size={24} />
-        </a>
-        <a
-          href="https://github.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`GitHub de ${name}`}
-          className="text-grey-scale-off-white hover:text-secondary-purple-heart transition-colors"
-        >
-          <FaGithub size={24} />
-        </a>
-      </div>
+      {(linkedin || github) && (
+        <div className="flex flex-rows justify-evenly w-full">
+          {linkedin && (
+            <a
+              href={linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`LinkedIn de ${name}`}
+              className="text-grey-scale-off-white hover:text-secondary-purple-heart transition-colors"
+            >
+              <FaLinkedin size={24} />
+            </a>
+          )}
+          {github && (
+            <a
+              href={github}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`GitHub de ${name}`}
+              className="text-grey-scale-off-white hover:text-secondary-purple-heart transition-colors"
+            >
+              <FaGithub size={24} />
+            </a>
+          )}
+        </div>
+      )}
     </div>
   );
 }

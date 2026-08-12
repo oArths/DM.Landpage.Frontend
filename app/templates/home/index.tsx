@@ -10,7 +10,7 @@ export default function Home({ id }: { id?: string }) {
         </p>
         <span className="flex flex-col items-center justify-center gap-[15px]">
           <h1 className="font-Lexend text-grey-scale-off-white text-7xl font-bold">
-            Learning Your Way
+            Data Mastery
           </h1>
           <h2 className="font-Inter text-grey-scale-off-white text-2xl font-light">
             Capacitando a sua Transformação Digital

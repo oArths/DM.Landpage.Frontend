@@ -1,10 +1,49 @@
 import SectionTitle from "../components/SectionTitle";
 import TeamCard from "../components/TeamCard";
 import GridBackground from "../components/GridBackground";
+import JsonLd from "../components/JsonLd";
+import { siteConfig } from "../config/site";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Sobre Nós",
+  description:
+    "Conheça a Data Mastery, empresa de serviços educacionais e consultorias especializada em Business Intelligence, Data Engineering, Data Science e Automação Robótica.",
+  alternates: {
+    canonical: "/about",
+  },
+  openGraph: {
+    title: "Sobre Nós | Data Mastery",
+    description:
+      "Consultoria educacional especializada em Business Intelligence, Data Engineering, Data Science e Automação Robótica.",
+    url: `${siteConfig.url}/about`,
+    type: "website",
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Início",
+      item: siteConfig.url,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Sobre Nós",
+      item: `${siteConfig.url}/about`,
+    },
+  ],
+};
 
 export default function AboutPage() {
   return (
     <main className="flex flex-col items-center justify-center w-full min-h-screen mb-32 bg-ui-colors-background">
+      <JsonLd data={breadcrumbSchema} />
       <section className="relative flex items-center justify-center w-full min-h-[90dvh] h-fit">
         <span className="relative z-20 flex flex-col items-center justify-center w-full py-[10%] gap-10">
           <span className="flex flex-col items-center justify-center w-fit gap-[17px]">
@@ -12,8 +51,9 @@ export default function AboutPage() {
               Conheça a Data Mastery
             </h1>
             <h2 className="font-Inter text-grey-scale-off-white text-2xl text-center font-light">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed dof
-              eiusmod tempor <br /> incididunt ut labore et dolore magna aliqua.
+              Serviços educacionais e consultorias em Business Intelligence,
+              Data Engineering, Data Science e Automação Robótica. Capacitamos
+              empresas e profissionais para a transformação digital.
             </h2>
           </span>
           <div className="flex flex-col w-[90%] mt-20 gap-12">
@@ -22,7 +62,7 @@ export default function AboutPage() {
               <div className="flex flex-col flex-1 gap-12">
                 <div className="flex flex-col gap-4">
                   <h2 className="font-Inter text-grey-scale-off-white w-full text-2xl text-left font-bold">
-                    ㅤㅤ
+                    Nossa História
                   </h2>
                   <span className="font-DMSans text-grey-scale-off-white text-lg font-normal">
                     A Data Mastery Tech é uma empresa de serviços educacionais e
@@ -102,14 +142,32 @@ export default function AboutPage() {
         <div className="w-full">
           <SectionTitle title="Nosso Time" />
           <span className="font-DMSans text-grey-scale-off-white text-lg font-normal">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Somos um time de consultores e educadores especializados em dados,
+            unindo experiência prática em projetos reais e didática voltada a
+            resultados. Atuamos nas frentes de Business Intelligence, Data
+            Engineering e Data Science para impulsionar a transformação digital
+            de empresas e a evolução de carreiras.
           </span>
         </div>
         <div className="grid grid-cols-3 place-items-center">
-          <TeamCard />
-          <TeamCard />
-          <TeamCard />
+          <TeamCard
+            name="Business Intelligence"
+            role="Power BI, Dashboards e KPIs"
+            image="/images/iconUp.svg"
+            alt="Ícone de Business Intelligence"
+          />
+          <TeamCard
+            name="Data Engineering"
+            role="Pipelines, Python e Automação"
+            image="/images/Union.svg"
+            alt="Ícone de Data Engineering"
+          />
+          <TeamCard
+            name="Data Science"
+            role="Machine Learning e Inteligência Artificial"
+            image="/images/bi_person-plus-fill.svg"
+            alt="Ícone de Data Science"
+          />
         </div>
       </section>
     </main>
