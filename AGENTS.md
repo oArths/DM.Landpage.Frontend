@@ -25,15 +25,15 @@ app/
 ├── components/
 │   ├── acordeon/       # Client accordion (clients & partners), inline data array
 │   ├── dropdown/       # Select dropdown (uses hooks but has NO "use client")
+│   ├── infoCard/       # Icon + title + text card (education, consultancy)
 │   └── SmoothScrollLink.tsx  # Client anchor link, JS scroll with 80px offset
 ├── templates/          # Page sections
 │   ├── header/  home/  services/  contact/  footer/  homeAbout/
 ├── about/page.tsx
 ├── layout.tsx          # Root layout + next/font setup
 ├── page.tsx
-└── globals.css         # Tailwind v4 @theme tokens, keyframes, @layer utilities
+└── globals.css         # Tailwind v4 @theme tokens, keyframes, @layer utilities + components
 ```
-`cores.css` at repo root is **not imported anywhere** — ignore it.
 
 ## Conventions
 
@@ -43,10 +43,12 @@ app/
 - Default export only; PascalCase components.
 
 ### Styling (Tailwind v4)
-- No `tailwind.config.js`. All tokens live in `globals.css` `@theme` block (oklch values): `--color-ui-colors-background`, `--color-secondary-purple-heart`, `--color-grey-scale-onyx`, `--color-purple-scale-stroke`, etc. → utilities like `bg-ui-colors-background`, `text-secondary-purple-heart`.
+- No `tailwind.config.js`. All tokens live in `globals.css` `@theme` block (hex values): `--color-ui-colors-background`, `--color-secondary-purple-heart`, `--color-grey-scale-onyx`, `--color-purple-scale-stroke`, etc. → utilities like `bg-ui-colors-background`, `text-secondary-purple-heart`.
 - Custom animation utilities in `@layer utilities` (e.g. `animation-slide-menu`, `animation-text`, `animation-rotate-90` + reverse variants, `bg-vignette` for the page radial-gradient overlay). Toggle via conditional className.
 - Accordion switches to vertical layout under `@media (max-width: 1689px)` in globals.css — keep these rules in CSS, not JS.
-- Don't add `@layer components`.
+- **Shared design = `@apply` rule in `@layer components`, not a component.** Don't create a component just to reuse classes. Rules: `.btn`, `.btn-outline`, `.link-explore`, `.footer-heading`, `.section-title` (bar via `::before`), `.card`, `.card-badge`, `.card-icon`. Use `className="btn ..."` and override with utilities as needed.
+- Those rules **must** stay inside `@layer components` — unlayered CSS beats Tailwind utilities and the per-call-site overrides (`px-11`, `py-3`, `w-1/3`) would stop working.
+- Keep a real component when there is behavior or markup CSS can't replace (Image/`fill`, state, loops, `onChange`): `infoCard`, `Field`, `TeamCard`, `GridBackground`, `dropdown`, `acordeon`, `menu`, `SmoothScrollLink`.
 
 ### Fonts
 `layout.tsx` defines `Lexend`/`Inter`/`DM_Sans` via `next/font/google` with CSS variables `--Lexend`, `--Inter`, `--DMSans`. `@theme` maps these to utilities `font-Lexend`, `font-Inter`, `font-DMSans` via `--font-*: var(--Lexend)` (etc.) — don't hardcode font stacks in `@theme`. **Case matters** in the utility names.

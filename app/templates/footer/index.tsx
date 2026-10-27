@@ -2,9 +2,6 @@ import Image from "next/image";
 import SmoothScrollLink from "../../components/SmoothScrollLink";
 import { FaYoutube, FaDiscord, FaInstagram, FaLinkedin, FaWhatsapp, FaEnvelope } from "react-icons/fa";
 
-const exploreLinkClasses =
-  "font-DMSans text-grey-scale-french-gray text-lg font-normal hover:text-secondary-purple-heart transition-colors";
-
 export default function Footer() {
   return (
     <footer className="bg-ui-colors-footer-background w-full py-12 px-20">
@@ -20,44 +17,37 @@ export default function Footer() {
         </div>
         <div className="flex flex-row justify-between w-[80%]">
           <span className="flex flex-col gap-2.5">
-            <h2 className="font-DMSans text-grey-scale-french-gray text-xl font-bold mb-1">
-              Explore
-            </h2>
-            <SmoothScrollLink href="/#servicos" className={exploreLinkClasses}>
+            <h2 className="footer-heading">Explore</h2>
+            <SmoothScrollLink href="/#servicos" className="link-explore">
               Nossos Serviços
             </SmoothScrollLink>
-            <SmoothScrollLink href="/#clientes" className={exploreLinkClasses}>
+            <SmoothScrollLink href="/#clientes" className="link-explore">
               Clientes & Parceiros
             </SmoothScrollLink>
-            <SmoothScrollLink href="/#empresa" className={exploreLinkClasses}>
-              Nossa Empresa
+            <SmoothScrollLink href="/#empresa" className="link-explore">              Nossa Empresa
             </SmoothScrollLink>
           </span>
           <span className="flex flex-col gap-2.5">
-            <h2 className="font-DMSans text-grey-scale-french-gray text-xl font-bold mb-1">
-              Entre em Contato
-            </h2>
+            <h2 className="footer-heading">Entre em Contato</h2>
             <a
               href="https://wa.me/5511989639090"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 font-DMSans text-grey-scale-french-gray text-lg font-normal hover:text-secondary-purple-heart transition-colors"
+              className="link-explore flex items-center gap-2"
             >
               <FaWhatsapp className="text-secondary-purple-heart" size={20} />
               (11) 98963-9090
             </a>
             <a
               href="mailto:eduardo@ascending.solutions"
-              className="flex items-center gap-2 font-DMSans text-grey-scale-french-gray text-lg font-normal hover:text-secondary-purple-heart transition-colors"
+              className="link-explore flex items-center gap-2"
             >
               <FaEnvelope className="text-secondary-purple-heart" size={20} />
               eduardo@ascending.solutions
             </a>
           </span>
           <span className="flex flex-col gap-2.5">
-            <h2 className="font-DMSans text-grey-scale-french-gray text-xl font-bold mb-1">
-              Nossas Redes
-            </h2>
+            <h2 className="footer-heading">Nossas Redes</h2>
             <div className="flex flex-row gap-4">
               <a
                 href="https://youtube.com"

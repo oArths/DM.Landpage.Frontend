@@ -1,4 +1,4 @@
-import ButtonPrimary from "../../components/ButtonPrimary";
+import SmoothScrollLink from "../../components/SmoothScrollLink";
 import GridBackground from "../../components/GridBackground";
 
 export default function Home({ id }: { id?: string }) {
@@ -16,9 +16,9 @@ export default function Home({ id }: { id?: string }) {
             Capacitando a sua Transformação Digital
           </h2>
         </span>
-        <ButtonPrimary href="/#contato" className="font-medium h-10 px-11 py-1.5">
+        <SmoothScrollLink href="/#contato" className="btn font-medium h-10 px-11 py-1.5">
           Agende uma reunião
-        </ButtonPrimary>
+        </SmoothScrollLink>
       </span>
       <div className="bg-primary-indigo absolute bottom-20 left-[50%] z-[15] w-[15vw] h-[15vw] rounded-full opacity-20 blur-3xl" />
       <div className="bg-primary-indigo absolute top-48 right-[80%] z-[15] w-[25vw] h-[25vw] rounded-full opacity-20 blur-3xl" />

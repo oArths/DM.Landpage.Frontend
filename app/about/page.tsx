@@ -1,4 +1,3 @@
-import SectionTitle from "../components/SectionTitle";
 import TeamCard from "../components/TeamCard";
 import GridBackground from "../components/GridBackground";
 import JsonLd from "../components/JsonLd";
@@ -57,7 +56,7 @@ export default function AboutPage() {
             </h2>
           </span>
           <div className="flex flex-col w-[90%] mt-20 gap-12">
-            <SectionTitle title="Sobre Nós" />
+            <h2 className="section-title">Sobre Nós</h2>
             <div className="flex justify-between gap-[5%]">
               <div className="flex flex-col flex-1 gap-12">
                 <div className="flex flex-col gap-4">
@@ -140,7 +139,7 @@ export default function AboutPage() {
       </section>
       <section className="flex flex-col w-[90%] gap-20">
         <div className="w-full">
-          <SectionTitle title="Nosso Time" />
+          <h2 className="section-title">Nosso Time</h2>
           <span className="font-DMSans text-grey-scale-off-white text-lg font-normal">
             Somos um time de consultores e educadores especializados em dados,
             unindo experiência prática em projetos reais e didática voltada a

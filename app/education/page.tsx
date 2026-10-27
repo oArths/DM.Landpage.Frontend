@@ -1,7 +1,6 @@
 import Contact from "../templates/contact";
-import BenefitCard from "../components/BenefitCard";
-import SectionTitle from "../components/SectionTitle";
-import ButtonPrimary from "../components/ButtonPrimary";
+import InfoCard from "../components/infoCard";
+import SmoothScrollLink from "../components/SmoothScrollLink";
 import JsonLd from "../components/JsonLd";
 import { siteConfig } from "../config/site";
 import type { Metadata } from "next";
@@ -80,19 +79,19 @@ export default function EducationPage() {
               <strong>Empresarial </strong>e <strong>Pessoal</strong>
             </h1>
 
-            <ButtonPrimary
+            <SmoothScrollLink
               href="/education#EducationContact"
-              className="font-medium text-grey-scale-off-white h-10 px-11 py-1.5"
+              className="btn font-medium text-grey-scale-off-white h-10 px-11 py-1.5"
             >
               Agende uma reunião
-            </ButtonPrimary>
+            </SmoothScrollLink>
           </span>
         </div>
       </section>
 
       <section className="flex flex-col w-[90%]">
         <div className="flex flex-col w-full gap-12">
-          <SectionTitle title="Treinamentos Personalizados para Empresas e Profissionais" />
+          <h2 className="section-title">Treinamentos Personalizados para Empresas e Profissionais</h2>
           <span className="font-DMSans text-grey-scale-off-white text-2xl font-normal">
             Oferecemos treinamentos especializados para capacitar equipes e
             indivíduos nas áreas de Business Intelligence, Data Engineering &
@@ -105,9 +104,9 @@ export default function EducationPage() {
       </section>
       <div className="bg-grey-scale-onyx w-[60%] h-px my-40" />
       <section className="flex flex-col w-[90%] gap-24">
-        <SectionTitle title="Benefícios dos nossos treinamentos" />
+        <h2 className="section-title">Benefícios dos nossos treinamentos</h2>
         <div className="grid grid-cols-2 gap-16">
-          <BenefitCard
+          <InfoCard
             icon="/images/iconUp.svg"
             alt="Ícone de crescimento e desempenho"
             title="Desempenho Aprimorado"
@@ -115,8 +114,8 @@ export default function EducationPage() {
             Ao capacitar seus colaboradores em ferramentas como Power BI e IA,
             sua equipe estará pronta para otimizar processos, aumentar a
             eficiência e gerar insights valiosos.
-          </BenefitCard>
-          <BenefitCard
+          </InfoCard>
+          <InfoCard
             icon="/images/Union.svg"
             alt="Ícone de união e retenção de talentos"
             title="Retenção de talentos"
@@ -124,8 +123,8 @@ export default function EducationPage() {
             Investir em educação corporativa é uma estratégia eficaz para reter
             e engajar colaboradores, criando um ambiente de constante evolução e
             aprendizado.
-          </BenefitCard>
-          <BenefitCard
+          </InfoCard>
+          <InfoCard
             icon="/images/bi_person-plus-fill.svg"
             alt="Ícone de integração de pessoas"
             title="Integração e Motivação"
@@ -133,8 +132,8 @@ export default function EducationPage() {
             O treinamento fortalece a integração das equipes e promove um
             ambiente colaborativo, gerando um impacto positivo no clima
             organizacional.
-          </BenefitCard>
-          <BenefitCard
+          </InfoCard>
+          <InfoCard
             icon="/images/bx_bxs-time-five.svg"
             alt="Ícone de relógio e aplicação imediata"
             title="Aplicação Imediata"
@@ -142,12 +141,12 @@ export default function EducationPage() {
             Focamos na transferência de conhecimento que pode ser imediatamente
             aplicada ao seu contexto de trabalho, garantindo resultados práticos
             e mensuráveis.
-          </BenefitCard>
+          </InfoCard>
         </div>
       </section>
       <div className="bg-grey-scale-onyx w-[60%] h-px my-40" />
       <section className="flex flex-col w-[90%] gap-24">
-        <SectionTitle title="O que oferecemos?" />
+        <h2 className="section-title">O que oferecemos?</h2>
         <div className="flex flex-col gap-10">
           <span className="flex flex-col items-start justify-center gap-3.5">
             <h2 className="font-Inter text-grey-scale-off-white text-2xl font-bold">

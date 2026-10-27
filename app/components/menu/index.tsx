@@ -52,30 +52,26 @@ export default function Menu({ openMenu }: menuInterface) {
             </span>
             <div className="flex flex-col items-center justify-center h-full gap-14 px-16 border-l border-purple-heart-700">
               <span className="flex flex-col gap-2.5">
-                <h2 className="font-DMSans text-grey-scale-french-gray text-xl font-bold mb-1">
-                  Info de Contato
-                </h2>
+                <h2 className="footer-heading">Info de Contato</h2>
                 <a
                   href="https://wa.me/5511989639090"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 font-DMSans text-grey-scale-french-gray text-lg font-normal hover:text-secondary-purple-heart transition-colors"
+                  className="link-explore flex items-center gap-2"
                 >
                   <I.FaWhatsapp className="text-secondary-purple-heart" size={20} />
                   (11) 98963-9090
                 </a>
                 <a
                   href="mailto:eduardo@ascending.solutions"
-                  className="flex items-center gap-2 font-DMSans text-grey-scale-french-gray text-lg font-normal hover:text-secondary-purple-heart transition-colors"
+                  className="link-explore flex items-center gap-2"
                 >
                   <I.FaEnvelope className="text-secondary-purple-heart" size={20} />
                   eduardo@ascending.solutions
                 </a>
               </span>
               <span className="flex flex-col items-start gap-2.5 w-full">
-                <h2 className="font-DMSans text-grey-scale-french-gray text-xl font-bold mb-1">
-                  Nossas Redes
-                </h2>
+                <h2 className="footer-heading">Nossas Redes</h2>
                 <div className="flex flex-row gap-4">
                   <a
                     href="https://youtube.com"

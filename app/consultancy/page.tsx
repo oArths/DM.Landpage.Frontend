@@ -1,11 +1,8 @@
 import Contact from "../templates/contact";
-import BenefitCard from "../components/BenefitCard";
-import SectionTitle from "../components/SectionTitle";
-import ButtonPrimary from "../components/ButtonPrimary";
+import InfoCard from "../components/infoCard";
 import JsonLd from "../components/JsonLd";
 import { siteConfig } from "../config/site";
 import type { Metadata } from "next";
-import InfoCard from "../components/BenefitCard";
 
 export const metadata: Metadata = {
   title: "Educacional - Treinamentos em Dados, BI e Automação",
@@ -88,13 +85,15 @@ export default function ConsultancyPage() {
             <span className="flex flex-row items-center justify-between gap-4">
 
 
-              <ButtonPrimary
-                className="font-medium text-grey-scale-off-white h-10 px-11 py-1.5"
+              <button
+                type="button"
+                className="btn font-medium text-grey-scale-off-white h-10 px-11 py-1.5"
               >
                 Agende uma reunião
-              </ButtonPrimary>
+              </button>
               <button
-                className="flex  cursor-pointer items-center justify-center font-DMSans text-base bg-grey-scale-eerie-black border border-purple-heart-500 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-heart-500 font-medium text-grey-scale-off-white  h-10 px-11 py-1.5"
+                type="button"
+                className="btn btn-outline font-medium h-10 px-11 py-1.5"
               >
                 Ver serviços
               </button>
@@ -105,7 +104,7 @@ export default function ConsultancyPage() {
 
       <section className="flex flex-col w-[90%]">
         <div className="flex flex-col w-full gap-12">
-          <SectionTitle title="Problemas operacionais que travam o crescimento" />
+          <h2 className="section-title">Problemas operacionais que travam o crescimento</h2>
           <div className="grid grid-cols-2 gap-16">
             <InfoCard
               icon="/images/clock.svg"
@@ -133,7 +132,7 @@ export default function ConsultancyPage() {
       </section>
       <div className="bg-grey-scale-onyx w-[60%] h-px my-40" />
       <section className="flex flex-col w-[90%] gap-24">
-        <SectionTitle title="Desenvolvemos soluções para transformar operações" />
+        <h2 className="section-title">Desenvolvemos soluções para transformar operações</h2>
         <div className="grid grid-cols-2 gap-16">
           <InfoCard
             icon="/images/code.svg"
@@ -167,7 +166,7 @@ export default function ConsultancyPage() {
       </section>
       <div className="bg-grey-scale-onyx w-[60%] h-px my-40" />
       <section className="flex flex-col w-[90%] gap-24">
-        <SectionTitle title="Como trabalhamos" />
+        <h2 className="section-title">Como trabalhamos</h2>
         <div className="grid grid-cols-2 gap-16">
           <InfoCard
             icon="/images/target.svg"

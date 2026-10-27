@@ -2,7 +2,6 @@
 import { useState } from "react";
 import Field from "../../components/Field";
 import Dropdown from "../../components/dropdown";
-import ButtonPrimary from "../../components/ButtonPrimary";
 
 const MOTIVO_OPTIONS = [
   "Marcar Reunião",
@@ -44,12 +43,7 @@ export default function Contact({ id }: { id: string }) {
 
   return (
     <section id={id} className="relative w-[90%] bg-ui-colors-background">
-      <div className="flex flex-row items-start justify-start gap-2.5">
-        <p className="bg-secondary-purple-heart h-10 w-2.5 trace" />
-        <h2 className="font-Inter text-grey-scale-off-white text-3xl font-bold">
-          Entre em Contato
-        </h2>
-      </div>
+      <h2 className="section-title">Entre em Contato</h2>
       <p className="font-Inter text-grey-scale-text tracking-widest mt-3.5 ml-6 mb-24 text-lg font-light">
         Alguma dúvida? Descubra como nossas soluções podem direcionar sua
         empresa ao sucesso. Entre em contato para conhecer o poder da Ciência
@@ -124,12 +118,12 @@ export default function Contact({ id }: { id: string }) {
           </div>
         </div>
         <div className="flex justify-start">
-          <ButtonPrimary
+          <button
             type="submit"
-            className="gap-3 py-3 w-1/3 font-semibold text-grey-scale-off-white hover:border-purple-heart-500 hover:bg-purple-heart-600/90 transition-colors"
+            className="btn gap-3 py-3 w-1/3 font-semibold text-grey-scale-off-white hover:border-purple-heart-500 hover:bg-purple-heart-600/90 transition-colors"
           >
             Enviar
-          </ButtonPrimary>
+          </button>
         </div>
       </form>
     </section>

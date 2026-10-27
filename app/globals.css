@@ -238,6 +238,47 @@ img {
   }
 }
 
+/* Regras de design compartilhadas. Em @layer components para que as utilities
+   passadas via className (padding, largura, fonte) continuem vencendo. */
+@layer components {
+  .btn {
+    @apply flex items-center justify-center px-14 py-2 h-10 text-sm lg:text-base rounded-sm text-center font-DMSans bg-secondary-purple-heart text-grey-scale-off-white cursor-pointer duration-75 ease-linear active:scale-[0.99] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-heart-500;
+  }
+
+  .btn-outline {
+    @apply bg-grey-scale-eerie-black border border-purple-heart-500;
+  }
+
+  .link-explore {
+    @apply font-DMSans text-grey-scale-french-gray text-lg font-normal hover:text-secondary-purple-heart transition-colors;
+  }
+
+  .footer-heading {
+    @apply font-DMSans text-grey-scale-french-gray text-xl font-bold mb-1;
+  }
+
+  .section-title {
+    @apply flex items-start gap-2.5 font-Inter text-grey-scale-off-white text-3xl font-bold;
+  }
+
+  .section-title::before {
+    @apply block w-2.5 h-10 shrink-0 bg-secondary-purple-heart;
+    content: "";
+  }
+
+  .card {
+    @apply flex flex-col items-start justify-center w-fit h-full p-7 gap-7 border border-grey-scale-onyx/50 rounded-3xl;
+  }
+
+  .card-badge {
+    @apply rounded-xl p-3 bg-purple-heart-500/10;
+  }
+
+  .card-icon {
+    @apply relative w-6 h-6;
+  }
+}
+
 @theme {
   --font-DMSans: var(--DMSans);
   --font-Inter: var(--Inter);
