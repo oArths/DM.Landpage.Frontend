@@ -50,10 +50,10 @@ export default function Contact({ id }: { id: string }) {
         de Dados e do Power BI.
       </p>
       <form onSubmit={handleSubmit} className="flex flex-col gap-12">
-        <div className="flex flex-col gap-12">
-          <div className="flex flex-row items-center justify-between gap-24">
+        <div className="flex flex-col gap-7 xl:gap-12">
+          <div className="flex flex-col xl:flex-row items-center justify-between gap-7 xl:gap-24">
             <Field
-              className="w-1/2"
+              className=" w-full xl:w-1/2"
               label="Nome Social"
               id="nomeSocial"
               name="nomeSocial"
@@ -62,7 +62,7 @@ export default function Contact({ id }: { id: string }) {
               onChange={handleInputChange}
             />
             <Field
-              className="w-1/2"
+              className=" w-full xl:w-1/2"
               label="Telefone"
               id="telefone"
               name="telefone"
@@ -72,9 +72,9 @@ export default function Contact({ id }: { id: string }) {
               onChange={handleInputChange}
             />
           </div>
-          <div className="flex flex-row items-center justify-between gap-24">
+          <div className="flex flex-col xl:flex-row items-center justify-between gap-7 xl:gap-24">
             <Field
-              className="w-1/2"
+              className=" w-full xl:w-1/2"
               label="E-mail"
               id="email"
               name="email"
@@ -83,7 +83,7 @@ export default function Contact({ id }: { id: string }) {
               value={formData.email}
               onChange={handleInputChange}
             />
-            <div className="w-1/2">
+            <div className=" w-full xl:w-1/2">
               <label
                 htmlFor="motivoContato"
                 className="font-Inter text-grey-scale-off-white text-lg font-normal mb-2 block"
